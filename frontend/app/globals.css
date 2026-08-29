@@ -1,0 +1,286 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray-950: #050505;
+  --color-gray-900: #0a0a0a;
+  --color-gray-800: #111111;
+  --color-gray-700: #1a1a1a;
+  --color-gray-500: #999999;
+  --color-gray-400: #bbbbbb;
+  --color-gray-300: #dddddd;
+  --color-gray-200: #eeeeee;
+  --color-red: #cc0000;
+  --color-red-bright: #ff2222;
+  --color-red-dim: #8a0000;
+
+  --font-display: var(--font-inter);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-space-mono);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0
+    }
+
+    to {
+      height: var(--radix-accordion-content-height)
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height)
+    }
+
+    to {
+      height: 0
+    }
+  }
+
+  @keyframes scan-line {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    10% {
+      opacity: 1;
+    }
+
+    90% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes blink {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+@theme inline {
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-2xl: 0;
+  --radius: 0;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0;
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #0a0a0a;
+  --card-foreground: #ffffff;
+  --popover: #0a0a0a;
+  --popover-foreground: #ffffff;
+  --primary: #ffffff;
+  --primary-foreground: #000000;
+  --secondary: #111111;
+  --secondary-foreground: #ffffff;
+  --muted: #111111;
+  --muted-foreground: #999999;
+  --accent: #cc0000;
+  --accent-foreground: #ffffff;
+  --destructive: #ff3333;
+  --border: #1a1a1a;
+  --input: #111111;
+  --ring: #ffffff;
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #ffffff;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #111111;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #1a1a1a;
+  --sidebar-ring: #ffffff;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: #000000;
+  }
+
+  body {
+    background: #000000;
+    color: #ffffff;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: #cc0000;
+    color: #ffffff;
+  }
+}
+
+/* SpaceX-style utility classes */
+.label-tag {
+  font-family: var(--font-space-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.heading-xl {
+  font-size: clamp(3rem, 8vw, 9rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.heading-lg {
+  font-size: clamp(2rem, 5vw, 5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.divider-line {
+  width: 100%;
+  height: 1px;
+  background: #1a1a1a;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: #ffffff;
+  color: #000000;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #cc0000;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(204, 0, 0, 0.2);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid #444;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.stat-number {
+  font-family: var(--font-space-mono), monospace;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.section-label {
+  font-family: var(--font-space-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #cc0000;
+  border-left: 2px solid #cc0000;
+  padding-left: 12px;
+  margin-bottom: 32px;
+}
+
+.card-dark {
+  background: #0a0a0a;
+  border: 1px solid #1a1a1a;
+  transition: border-color 0.2s ease;
+}
+
+.card-dark:hover {
+  border-color: #333;
+}

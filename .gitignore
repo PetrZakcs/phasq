@@ -1,0 +1,62 @@
+# Dependencies
+node_modules/
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# Environment files
+.env
+.env.local
+.env*.local
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Next.js
+.next/
+out/
+
+# Vercel
+.vercel
+
+# Testing
+coverage/
+.pytest_cache/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Cache
+.cache/
+*.cache
+
+# Temporary
+tmp/
+temp/
+
+# Sanity
+sanity/.sanity/
+
+# Google Earth Engine
+.gee_project
+**/earthengine-token.json
+
+# SAR Data (large files)
+data/sentinel1/raw/*.zip
+data/sentinel1/raw/*.SAFE
+data/sentinel1/processed/*.tif
