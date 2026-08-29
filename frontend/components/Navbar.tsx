@@ -22,8 +22,7 @@ export default function Navbar() {
     const navLinks = [
         { name: 'Technology', href: '#technology' },
         { name: 'Evidence', href: '#missions' },
-        { name: 'Team', href: '#company' },
-        { name: 'Pricing', href: '#pricing' },
+        { name: 'Process', href: '#process' },
     ];
 
     const CALENDLY_URL = "https://calendly.com/petr-phasq/30min";

@@ -5,12 +5,11 @@ import Hero from "@/components/Hero";
 import TrustLogos from "@/components/TrustLogos";
 import Features from "@/components/Features";
 import MissionReports from "@/components/MissionReports";
+import Coverage from "@/components/Coverage";
 import ProcessSteps from "@/components/ProcessSteps";
 import Benefits from "@/components/Benefits";
-import Pricing from "@/components/Pricing";
 import Waitlist from "@/components/Waitlist";
 import FAQ from "@/components/FAQ";
-import Founder from "@/components/Founder";
 import TruthSlider from "@/components/TruthSlider";
 import { Mail, Linkedin, Instagram } from 'lucide-react';
 
@@ -53,9 +52,9 @@ export default function Home() {
 
       <Features />
       <MissionReports />
+      <Coverage />
       <Benefits />
       <ProcessSteps />
-      <Pricing />
 
       {/* Agriculture — honest early access, no theater */}
       <section className="py-24 md:py-32 bg-surface border-t border-line">
@@ -94,7 +93,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Founder />
       <FAQ />
       <Waitlist />
 
