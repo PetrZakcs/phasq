@@ -5,6 +5,7 @@ import SectorHero from "@/components/SectorHero";
 import CapabilityList from "@/components/CapabilityList";
 import Coverage from "@/components/Coverage";
 import ProcessSteps from "@/components/ProcessSteps";
+import Roadmap from "@/components/Roadmap";
 import ContactCTA from "@/components/ContactCTA";
 import Footer from "@/components/Footer";
 
@@ -73,6 +74,21 @@ export default function DefensePage() {
                     </div>
                 </div>
             </section>
+
+            <Roadmap
+                eyebrow="Where this is going"
+                heading={<>The satellite gives the alert.<br />The gap is what happens next.</>}
+                body={[
+                    "A 6-day revisit is wide, all-weather coverage — and also a real gap: whatever changes at hour 2 of that cycle isn't confirmed until hour 144. That gap is exactly what defense ISR programs already solve by pairing wide-area satellite cueing with a drone or UAS that closes in and holds the target in view.",
+                    "We're designing toward the same architecture: the same physics engine — radar backscatter, phase coherence — applied to drone-mounted SAR and EO feeds, so a satellite-flagged anomaly can be picked up and tracked in near-real-time instead of waiting for the next pass.",
+                    "This isn't shipped. We'd rather show you the direction honestly than imply a capability that doesn't exist yet — and if persistent, real-time coverage between passes matters to your program, that's a conversation worth having now, while the architecture is still being shaped around real requirements.",
+                ]}
+                items={[
+                    { title: 'Drone / UAS sensor fusion', desc: 'Extending the calibration pipeline to drone-mounted SAR and EO payloads, not just satellite passes.' },
+                    { title: 'Continuous custody', desc: 'Hold a satellite-flagged site in view between the 6-day revisit windows, not just re-check it next pass.' },
+                    { title: 'Edge-side cueing', desc: 'Push the anomaly-detection step closer to the sensor so a flag can trigger a response in minutes, not after downlink.' },
+                ]}
+            />
 
             <ContactCTA
                 eyebrow="Talk to us"

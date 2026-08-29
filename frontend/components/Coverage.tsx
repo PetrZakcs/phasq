@@ -17,11 +17,31 @@ export default function Coverage() {
                 <h2 className="heading-xl text-[3.4rem] sm:text-[4.5rem] md:text-[6rem] text-ink mb-6">
                     <CountUp value={67} prefix="~" suffix="%" duration={1.4} />
                 </h2>
-                <p className="text-ink-soft text-base md:text-lg leading-relaxed max-w-[56ch] mb-16">
-                    That&apos;s the long-term average share of Earth covered by cloud at any given moment
-                    (NASA/ISCCP). Every optical satellite image you&apos;ve ever looked at was taken through
-                    the roughly one-third of sky that happened to be clear. C-band radar doesn&apos;t care
-                    which third that is.
+                <p className="text-ink-soft text-base md:text-lg leading-relaxed max-w-[56ch] mb-4">
+                    That&apos;s the long-term average share of Earth covered by cloud at any given moment —
+                    66.7%, precisely, per four decades of satellite cloud climatology. Every optical satellite
+                    image you&apos;ve ever looked at was taken through the roughly one-third of sky that
+                    happened to be clear. C-band radar doesn&apos;t care which third that is.
+                </p>
+                <p className="font-data text-[11px] text-ink-faint tracking-wide mb-16">
+                    Sources:{' '}
+                    <a
+                        href="https://www.ncei.noaa.gov/products/international-satellite-cloud-climatology"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline decoration-line-strong hover:text-ink-soft hover:decoration-accent transition-colors"
+                    >
+                        ISCCP cloud climatology (NOAA/NCEI)
+                    </a>
+                    {' · '}
+                    <a
+                        href="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Satellite_constellation"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline decoration-line-strong hover:text-ink-soft hover:decoration-accent transition-colors"
+                    >
+                        Sentinel-1 constellation (ESA)
+                    </a>
                 </p>
 
                 <div className="flex flex-col gap-8 max-w-[900px]">
