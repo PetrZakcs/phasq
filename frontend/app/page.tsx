@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import TrustLogos from "@/components/TrustLogos";
 import Features from "@/components/Features";
 import MissionReports from "@/components/MissionReports";
 import ProcessSteps from "@/components/ProcessSteps";
@@ -12,7 +13,6 @@ import FAQ from "@/components/FAQ";
 import Founder from "@/components/Founder";
 import TruthSlider from "@/components/TruthSlider";
 import { Mail, Linkedin, Instagram } from 'lucide-react';
-import Link from 'next/link';
 
 export default function Home() {
   const INSTAGRAM_URL = "https://www.instagram.com/phasq1/";
@@ -20,28 +20,30 @@ export default function Home() {
   const CALENDLY_URL = "https://calendly.com/petr-phasq/30min";
 
   return (
-    <main className="bg-black text-white selection:bg-[#cc0000]/30 overflow-x-hidden">
+    <main className="bg-ground text-ink selection:bg-accent/30 overflow-x-hidden">
       <Navbar />
       <Hero />
+      <TrustLogos />
 
-      {/* Comparison Section */}
-      <section id="demo" className="py-24 md:py-32 bg-black border-t border-white/10 overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10 mb-20">
-          <div className="section-label">Live demonstration</div>
+      {/* Comparison Section — the one moment on this site that proves itself */}
+      <section id="demo" className="py-24 md:py-32 bg-ground border-t border-line overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10 mb-16">
+          <div className="section-label">Same field, same day</div>
           <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-10">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-none tracking-tighter uppercase text-white m-0">
-              The shift from<br />
-              optical to <span className="text-[#cc0000]">radar.</span>
+            <h2 className="heading-lg text-ink">
+              What optical sees.<br />
+              What <span className="text-accent">radar</span> sees.
             </h2>
-            <p className="text-[#666] text-base md:text-lg leading-relaxed font-light m-0 max-w-[400px]">
-              Drag the slider to compare standard optical imagery with PhasQ's phase-intelligent radar analysis.
+            <p className="text-ink-soft text-base md:text-lg leading-relaxed max-w-[400px]">
+              Drag the slider. Left is a standard optical image. Right is PhasQ&apos;s radar backscatter
+              read of the same coordinates — the measurement moisture actually shows up in.
             </p>
           </div>
         </div>
 
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 h-[400px] md:h-[600px] lg:h-[700px]">
-          <TruthSlider 
-            beforeImage="/vysocina_optical.png" 
+          <TruthSlider
+            beforeImage="/vysocina_optical.png"
             afterImage="/vysocina_radar.png"
             beforeLabel="Optical (Sentinel-2)"
             afterLabel="PhasQ Radar (Sentinel-1)"
@@ -53,47 +55,38 @@ export default function Home() {
       <MissionReports />
       <Benefits />
       <ProcessSteps />
+      <Pricing />
 
-      {/* Agriculture Restricted Area */}
-      <section className="py-24 md:py-32 bg-[#060606] border-t border-white/10">
+      {/* Agriculture — honest early access, no theater */}
+      <section className="py-24 md:py-32 bg-surface border-t border-line">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-          <div className="flex flex-col gap-6 items-start mb-16">
-            <div className="section-label">Early access — Q2 2026</div>
-            <div className="flex items-center gap-2 font-mono text-[11px] tracking-widest text-[#cc0000] uppercase">
-                🔴 Restricted Area
-            </div>
-          </div>
-          
+          <div className="section-label">Early access — opening Q2 2026</div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
             <div className="flex flex-col">
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-none tracking-tighter uppercase text-white mb-6">
-                Agriculture<br />
-                Intelligence.
+              <h2 className="heading-lg text-ink mb-6">
+                Agriculture<br />intelligence.
               </h2>
-              <p className="text-gray-400 text-base md:text-lg leading-relaxed font-light mb-10 max-w-[480px]">
-                Coming soon: Crop health, soil moisture, and harvest readiness via Sentinel-1 SAR. 
-                Full orbital throughput for precision farming.
+              <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-10 max-w-[480px]">
+                Crop health, soil moisture, and harvest readiness via Sentinel-1 SAR — moving from a
+                validated single-region pipeline (see the verified analysis above) to full field-scale
+                coverage. We&apos;re building this in the open, not behind a locked door.
               </p>
-              <div>
-                <span className="inline-block font-mono text-[11px] tracking-widest uppercase text-white border border-white/10 px-8 py-3 bg-white/5 backdrop-blur-sm">
-                  Opening Q2 2026
-                </span>
-              </div>
+              <a href="#waitlist" className="btn-outline w-fit">
+                Join the pilot list ↗
+              </a>
             </div>
 
-            <div className="relative aspect-video rounded-xl border border-white/10 overflow-hidden bg-black flex items-center justify-center group">
-              <img 
-                src="/agri_restricted.png" 
-                alt="Agri Intel" 
-                className="w-full h-full object-cover grayscale opacity-20 group-hover:opacity-30 transition-opacity"
+            <div className="relative aspect-video border border-line overflow-hidden bg-ground flex items-center justify-center">
+              <img
+                src="/radar.png"
+                alt="Sentinel-1 radar backscatter preview"
+                className="w-full h-full object-cover grayscale opacity-40"
               />
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center bg-black/40 backdrop-blur-md">
-                <div className="w-12 h-12 rounded-full border border-[#cc0000]/30 flex items-center justify-center mb-4">
-                    <span className="text-[#cc0000] text-xl">🔒</span>
-                </div>
-                <h3 className="text-lg font-bold uppercase tracking-widest text-[#cc0000] mb-2">Access Required</h3>
-                <p className="text-[10px] font-mono text-[#555] uppercase tracking-widest">
-                  Authentication protocol v2.1 // Q2 Release
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center bg-ground/50 backdrop-blur-sm">
+                <div className="eyebrow text-accent mb-2">Field-scale coverage</div>
+                <p className="text-ink-soft text-sm max-w-[32ch]">
+                  Currently one validated region. Expanding through the pilot program.
                 </p>
               </div>
             </div>
@@ -102,67 +95,55 @@ export default function Home() {
       </section>
 
       <Founder />
-
-
-
+      <FAQ />
       <Waitlist />
 
-      {/* Footer */}
-      {/* Footer */}
-      <footer className="py-20 md:py-24 bg-black border-t border-white/10">
+      <footer className="py-20 md:py-24 bg-ground border-t border-line">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-10 mb-20">
-            {/* Branding */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-10 mb-16">
             <div className="flex flex-col col-span-2">
-              <div className="text-2xl font-black tracking-tighter uppercase mb-6">
-                PHASQ<span className="text-[#cc0000]">.tech</span>
+              <div className="font-display text-2xl font-bold text-ink mb-6">
+                PHASQ<span className="text-accent">.tech</span>
               </div>
-              <p className="text-[#666] text-sm md:text-base leading-relaxed font-light max-w-[320px] mb-8">
-                Physics-based radar intelligence. Shifting the perspective from optical to radar surveillance.
+              <p className="text-ink-faint text-sm md:text-base leading-relaxed max-w-[320px] mb-8">
+                Physics-based radar intelligence. Reading the actual radar return, not a picture of it.
               </p>
               <div className="flex gap-6">
-                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-white transition-colors">
-                    <Instagram className="w-5 h-5" />
+                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="text-ink-faint hover:text-ink transition-colors">
+                  <Instagram className="w-5 h-5" />
                 </a>
-                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-white transition-colors">
-                    <Linkedin className="w-5 h-5" />
+                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="text-ink-faint hover:text-ink transition-colors">
+                  <Linkedin className="w-5 h-5" />
                 </a>
               </div>
             </div>
 
-            {/* Links */}
             <div className="flex flex-col gap-6">
-              <h4 className="font-mono text-[11px] tracking-widest uppercase text-white/50 mb-2">Comms</h4>
-              <a href="mailto:petr@phasq.com" className="group flex items-center gap-4 text-gray-400 hover:text-white transition-colors text-sm">
-                <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[#cc0000] group-hover:bg-[#cc0000]/10 transition-all">
-                    <Mail className="w-4 h-4" />
+              <h4 className="eyebrow mb-2">Contact</h4>
+              <a href="mailto:petr@phasq.com" className="group flex items-center gap-4 text-ink-soft hover:text-ink transition-colors text-sm">
+                <div className="w-10 h-10 rounded-full border border-line flex items-center justify-center group-hover:border-accent group-hover:bg-accent/10 transition-all">
+                  <Mail className="w-4 h-4" />
                 </div>
                 petr@phasq.com
               </a>
-              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 text-gray-400 hover:text-white transition-colors text-sm">
-                <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[#cc0000] group-hover:bg-[#cc0000]/10 transition-all font-mono text-[10px] font-bold">
-                    CAL
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 text-ink-soft hover:text-ink transition-colors text-sm">
+                <div className="w-10 h-10 rounded-full border border-line flex items-center justify-center group-hover:border-accent group-hover:bg-accent/10 transition-all font-data text-[10px] font-medium">
+                  CAL
                 </div>
                 Book a demo
               </a>
             </div>
 
-            {/* Legal / System */}
             <div className="flex flex-col gap-4">
-              <h4 className="font-mono text-[11px] tracking-widest uppercase text-white/50 mb-2">System</h4>
-              <Link href="/demo" className="text-[#1a1a1a] hover:text-[#222] transition-colors text-[10px] font-mono tracking-[0.2em] whitespace-nowrap cursor-default">
-                v1.2.5 — OPERATIONAL
-              </Link>
-              <span className="text-[#333] text-[10px] font-mono tracking-[0.2em] whitespace-nowrap">© 2026 PHASQ INTELLIGENCE</span>
+              <h4 className="eyebrow mb-2">System</h4>
+              <span className="font-data text-[10px] text-ink-faint tracking-[0.15em]">v1.2.5 — DEMO MODE</span>
+              <span className="font-data text-[10px] text-ink-faint tracking-[0.15em]">© 2026 PHASQ TECHNOLOGIES</span>
             </div>
           </div>
 
-          <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-[10px] font-mono text-[#222] tracking-[0.4em] uppercase">
-                SENTINEL-1 // SENTINEL-2 // GEE // PHASE-02
-            </div>
-            <div className="flex gap-4">
-                <div className="w-12 h-[1px] bg-white/5" />
+          <div className="pt-10 border-t border-line flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="font-data text-[10px] text-ink-faint tracking-[0.3em] uppercase">
+              Sentinel-1 · Sentinel-2 · Google Earth Engine
             </div>
           </div>
         </div>

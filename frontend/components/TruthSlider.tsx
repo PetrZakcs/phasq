@@ -72,7 +72,7 @@ export default function TruthSlider({
     return (
         <div
             ref={containerRef}
-            className="relative w-full h-full min-h-[600px] bg-black rounded-2xl border border-white/10 overflow-hidden select-none cursor-ew-resize group"
+            className="relative w-full h-full min-h-[600px] bg-ground rounded-2xl border border-line overflow-hidden select-none cursor-ew-resize group"
             onMouseDown={handleMouseDown}
             onTouchStart={handleMouseDown}
             onTouchMove={handleTouchMove}
@@ -86,15 +86,15 @@ export default function TruthSlider({
                     className="w-full h-full object-cover"
                     draggable={false}
                 />
-                <div className="absolute top-4 right-4 bg-black/80 backdrop-blur-md px-3 py-1.5 rounded border border-[#cc0000]/50 flex items-center gap-2">
-                    <div className="w-2 h-2 bg-[#cc0000] rounded-full animate-pulse" />
-                    <span className="text-[#cc0000] font-mono text-xs font-bold tracking-wider">{afterLabel.toUpperCase()}</span>
+                <div className="absolute top-4 right-4 bg-ground/80 backdrop-blur-md px-3 py-1.5 rounded border border-accent/50 flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+                    <span className="text-accent font-data text-xs font-medium tracking-wider">{afterLabel.toUpperCase()}</span>
                 </div>
             </div>
 
             {/* Foreground Image (Before - Optical) */}
             <div
-                className="absolute inset-0 h-full overflow-hidden border-r border-white/50"
+                className="absolute inset-0 h-full overflow-hidden border-r border-ink/50"
                 style={{ width: `${sliderPosition}%`, zIndex: 10 }}
             >
                 <img
@@ -104,18 +104,18 @@ export default function TruthSlider({
                     style={{ width: containerWidth ? `${containerWidth}px` : '100%' }}
                     draggable={false}
                 />
-                <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded border border-white/20 flex items-center gap-2">
-                    <span className="text-white font-mono text-xs font-bold tracking-wider">{beforeLabel.toUpperCase()}</span>
+                <div className="absolute top-4 left-4 bg-ground/60 backdrop-blur-md px-3 py-1.5 rounded border border-line-strong flex items-center gap-2">
+                    <span className="text-ink font-data text-xs font-medium tracking-wider">{beforeLabel.toUpperCase()}</span>
                 </div>
             </div>
 
             {/* Handle */}
             <div
-                className="absolute top-0 bottom-0 w-0.5 bg-white z-20 cursor-ew-resize shadow-[0_0_20px_rgba(0,0,0,0.8)]"
+                className="absolute top-0 bottom-0 w-0.5 bg-ink z-20 cursor-ew-resize shadow-[0_0_20px_rgba(0,0,0,0.8)]"
                 style={{ left: `${sliderPosition}%` }}
             >
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg transform transition-transform group-hover:scale-110">
-                    <MoveHorizontal className="w-4 h-4 text-black" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-ink rounded-full flex items-center justify-center shadow-lg transform transition-transform group-hover:scale-110">
+                    <MoveHorizontal className="w-4 h-4 text-ground" />
                 </div>
             </div>
         </div>

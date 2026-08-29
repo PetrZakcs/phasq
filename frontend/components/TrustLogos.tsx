@@ -1,24 +1,29 @@
 'use client';
 
 export default function TrustLogos() {
-    const logos = [
-        { name: 'ESA', label: 'ESA BIC' },
-        { name: 'Copernicus', label: 'COPERNICUS' },
-        { name: 'GSA', label: 'EUSPA' },
-        { name: 'MinAgri', label: 'MINISTRY OF AGRICULTURE' },
+    // What the analysis is actually built on — public, verifiable infrastructure.
+    // Not a claim of partnership or endorsement, just the supply chain.
+    const stack = [
+        { name: 'Sentinel-1', label: 'C-BAND SAR' },
+        { name: 'Sentinel-2', label: 'OPTICAL REFERENCE' },
+        { name: 'Copernicus Data Space', label: 'DATA ACCESS' },
+        { name: 'Google Earth Engine', label: 'COMPUTE' },
     ];
 
     return (
-        <section className="py-12 border-b border-white/5 bg-black/50 backdrop-blur-sm">
+        <section className="py-10 border-b border-line bg-ground/50 backdrop-blur-sm">
             <div className="max-w-7xl mx-auto px-6">
-                <p className="text-center font-mono text-[10px] text-gray-500 mb-12 uppercase tracking-[0.25em] font-bold">
-                    Trusted by Scientific & Government Institutions
+                <p className="text-center eyebrow mb-8">
+                    Built on open Earth observation infrastructure — not proprietary claims
                 </p>
-                <div className="flex flex-wrap justify-center gap-12 md:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all duration-500 items-center">
-                    {logos.map((logo) => (
-                        <div key={logo.name} className="flex items-center gap-2 group">
-                            <span className="text-sm md:text-xl font-black font-sans text-gray-400 group-hover:text-white transition-colors tracking-tighter uppercase">
-                                {logo.label}
+                <div className="flex flex-wrap justify-center gap-x-16 gap-y-4 items-baseline">
+                    {stack.map((s) => (
+                        <div key={s.name} className="flex flex-col items-center gap-1">
+                            <span className="text-[15px] font-semibold text-ink-soft tracking-tight">
+                                {s.name}
+                            </span>
+                            <span className="font-data text-[9px] tracking-[0.15em] text-ink-faint">
+                                {s.label}
                             </span>
                         </div>
                     ))}

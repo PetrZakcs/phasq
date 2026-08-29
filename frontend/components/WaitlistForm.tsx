@@ -24,7 +24,7 @@ export default function WaitlistForm() {
 
         if (!supabase) {
             setStatus('error');
-            setMessage('DATABASE CONNECTION NOT CONFIGURED.');
+            setMessage('Signup is temporarily unavailable. Please email us instead.');
             return;
         }
 
@@ -40,40 +40,37 @@ export default function WaitlistForm() {
             if (error) {
                 if (error.code === '23505' || error.message.includes('duplicate')) {
                     setStatus('success');
-                    setMessage('YOU ARE ALREADY IN THE QUEUE.');
+                    setMessage("You're already on the list.");
                     return;
                 }
                 throw error;
             }
 
             setStatus('success');
-            setMessage('TRANSMISSION RECEIVED. WELCOME TO THE INTELLIGENCE LAYER.');
+            setMessage("You're on the list — we'll reach out as pilot spots open up.");
             setEmail('');
         } catch (error) {
             console.error('Error submitting to waitlist:', error);
             setStatus('error');
-            setMessage('TRANSMISSION FAILED. PLEASE RETRY.');
+            setMessage('Something went wrong. Please try again.');
         }
     };
 
     return (
-        <div className="w-full max-w-lg relative group">
-            {/* Ambient Background Glow */}
-            <div className="absolute -inset-2 bg-gradient-to-r from-[#cc0000]/10 to-transparent rounded-2xl blur-2xl opacity-40 group-hover:opacity-70 transition duration-1000"></div>
-            
-            <div className="relative bg-black/40 backdrop-blur-2xl border border-white/10 p-6 md:p-10">
+        <div className="w-full max-w-lg">
+            <div className="bg-ground border border-line p-6 md:p-10">
                 <AnimatePresence mode="wait">
                     {status === 'success' ? (
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
+                            initial={{ opacity: 0, scale: 0.97 }}
                             animate={{ opacity: 1, scale: 1 }}
                             className="text-center py-10"
                         >
-                            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#cc0000]/10 text-[#cc0000] mb-6">
-                                <CheckCircle className="w-10 h-10" />
+                            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 text-accent mb-6">
+                                <CheckCircle className="w-8 h-8" />
                             </div>
-                            <h3 className="text-2xl font-black text-white mb-3 tracking-tighter uppercase">ACCESS REQUESTED</h3>
-                            <p className="text-[#cc0000] font-mono text-[11px] tracking-widest uppercase">{message}</p>
+                            <h3 className="text-xl font-bold text-ink mb-3">You&apos;re in.</h3>
+                            <p className="text-ink-soft text-sm">{message}</p>
                         </motion.div>
                     ) : (
                         <motion.form
@@ -83,65 +80,69 @@ export default function WaitlistForm() {
                             className="space-y-6"
                         >
                             <div>
-                                <label htmlFor="email" className="sr-only">Email Frequency</label>
+                                <label htmlFor="email" className="sr-only">Email address</label>
                                 <input
                                     id="email"
                                     type="email"
                                     required
-                                    placeholder="ENTER EMAIL FREQUENCY"
+                                    placeholder="Email address"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     disabled={status === 'loading'}
-                                    className="w-full bg-black/50 border border-white/20 px-5 py-4 text-white font-mono placeholder:text-[#333] focus:outline-none focus:border-[#cc0000] focus:ring-1 focus:ring-[#cc0000] transition-all text-sm"
+                                    className="w-full bg-surface border border-line px-5 py-4 text-ink placeholder:text-ink-faint focus:outline-none focus:border-accent transition-all text-sm"
                                 />
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div className="relative">
+                                    <label htmlFor="interest" className="sr-only">Area of interest</label>
                                     <select
+                                        id="interest"
                                         value={interest}
                                         onChange={(e) => setInterest(e.target.value)}
                                         disabled={status === 'loading'}
-                                        className="w-full bg-black/50 border border-white/20 px-5 py-4 text-white font-mono appearance-none focus:outline-none focus:border-[#cc0000] focus:ring-1 focus:ring-[#cc0000] transition-all cursor-pointer text-[11px] tracking-widest"
+                                        className="w-full bg-surface border border-line px-5 py-4 text-ink appearance-none focus:outline-none focus:border-accent transition-all cursor-pointer text-sm"
                                     >
-                                        <option value="agriculture">AGRI-INTEL</option>
-                                        <option value="defense">DEFENSE/GOV</option>
-                                        <option value="investor">INVESTOR</option>
-                                        <option value="other">OTHER</option>
+                                        <option value="agriculture">Agriculture</option>
+                                        <option value="defense">Defense / gov</option>
+                                        <option value="investor">Investor</option>
+                                        <option value="other">Other</option>
                                     </select>
-                                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#444] pointer-events-none" />
+                                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-faint pointer-events-none" />
                                 </div>
 
                                 <div className="relative">
+                                    <label htmlFor="country" className="sr-only">Region</label>
                                     <select
+                                        id="country"
                                         value={country}
                                         onChange={(e) => setCountry(e.target.value)}
                                         disabled={status === 'loading'}
-                                        className="w-full bg-black/50 border border-white/20 px-5 py-4 text-white font-mono appearance-none focus:outline-none focus:border-[#cc0000] focus:ring-1 focus:ring-[#cc0000] transition-all cursor-pointer text-[11px] tracking-widest"
+                                        className="w-full bg-surface border border-line px-5 py-4 text-ink appearance-none focus:outline-none focus:border-accent transition-all cursor-pointer text-sm"
                                     >
-                                        <option value="other">SELECT REGION</option>
-                                        <option value="us">NORTH AMERICA</option>
-                                        <option value="eu">EUROPE</option>
-                                        <option value="apac">ASIA PACIFIC</option>
-                                        <option value="latam">LATAM</option>
-                                        <option value="mea">MIDDLE EAST/AFRICA</option>
+                                        <option value="other">Select region</option>
+                                        <option value="eu">Europe</option>
+                                        <option value="us">North America</option>
+                                        <option value="apac">Asia Pacific</option>
+                                        <option value="latam">Latin America</option>
+                                        <option value="mea">Middle East / Africa</option>
                                     </select>
-                                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#444] pointer-events-none" />
+                                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-faint pointer-events-none" />
                                 </div>
                             </div>
 
                             <button
                                 type="submit"
                                 disabled={status === 'loading'}
-                                className="w-full bg-[#cc0000] text-white font-black font-mono py-5 hover:bg-white hover:text-black transition-all uppercase tracking-[0.2em] flex items-center justify-center gap-3 relative overflow-hidden"
+                                className="w-full bg-ink text-ground font-semibold py-5 hover:bg-accent hover:text-ink transition-all flex items-center justify-center gap-3"
                             >
                                 {status === 'loading' ? (
                                     <>
-                                        <Loader2 className="w-5 h-5 animate-spin" />
-                                        ENCRYPTING...
+                                        <Loader2 className="w-4 h-4 animate-spin" />
+                                        Submitting...
                                     </>
                                 ) : (
-                                    'INITIATE UPLINK'
+                                    'Join the waitlist'
                                 )}
                             </button>
 
@@ -149,21 +150,15 @@ export default function WaitlistForm() {
                                 <motion.p
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
-                                    className="text-[#cc0000] text-[10px] font-mono text-center flex items-center justify-center gap-2 tracking-widest"
+                                    className="text-accent text-[13px] text-center flex items-center justify-center gap-2"
                                 >
-                                    <AlertCircle className="w-3 h-3" />
+                                    <AlertCircle className="w-3.5 h-3.5" />
                                     {message}
                                 </motion.p>
                             )}
                         </motion.form>
                     )}
                 </AnimatePresence>
-            </div>
-
-            <div className="mt-8 text-center">
-                <p className="text-[10px] text-[#333] font-mono uppercase tracking-[0.3em]">
-                    SECURE TRANSMISSION // 256-BIT ENCRYPTION
-                </p>
             </div>
         </div>
     );
