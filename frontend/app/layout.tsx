@@ -22,7 +22,6 @@ export const metadata: Metadata = {
 };
 
 import HUDLayout from "@/components/HUDLayout";
-import { Providers } from "./providers";
 
 export default function RootLayout({
   children,
@@ -35,11 +34,9 @@ export default function RootLayout({
         className={`${spaceMono.variable} ${inter.variable} antialiased`}
         style={{ background: '#000', color: '#fff' }}
       >
-        <Providers>
-          <HUDLayout>
-            {children}
-          </HUDLayout>
-        </Providers>
+        <HUDLayout>
+          {children}
+        </HUDLayout>
         <Analytics />
       </body>
     </html>
