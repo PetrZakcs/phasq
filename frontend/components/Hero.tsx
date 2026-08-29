@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import BgVideo from './BgVideo';
+import CountUp from './CountUp';
 
 export default function Hero() {
     return (
@@ -82,16 +83,21 @@ export default function Hero() {
 
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-6 pt-8 border-t border-line">
                         {[
-                            { value: '6 DAYS', label: 'Revisit cycle, Sentinel-1 pair' },
-                            { value: '14+ DAYS', label: 'Earlier than visible crop stress' },
-                            { value: '100%', label: 'Cloud & night penetration' },
-                            { value: 'C-BAND', label: '5.4 GHz — dielectric-sensitive' },
+                            { value: 6, suffix: ' DAYS', label: 'Revisit cycle, Sentinel-1 pair' },
+                            { value: 14, prefix: '', suffix: '+ DAYS', label: 'Earlier than visible crop stress' },
+                            { value: 100, suffix: '%', label: 'Cloud & night penetration' },
                         ].map((stat, i) => (
-                            <div key={i} className={i > 0 ? 'md:pl-6 md:border-l md:border-line' : ''}>
-                                <div className="stat-number">{stat.value}</div>
+                            <div key={stat.label} className={i > 0 ? 'md:pl-6 md:border-l md:border-line' : ''}>
+                                <div className="stat-number">
+                                    <CountUp value={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
+                                </div>
                                 <div className="text-ink-faint text-[13px] mt-1 max-w-[18ch]">{stat.label}</div>
                             </div>
                         ))}
+                        <div className="md:pl-6 md:border-l md:border-line">
+                            <div className="stat-number">C-BAND</div>
+                            <div className="text-ink-faint text-[13px] mt-1 max-w-[18ch]">5.4 GHz — dielectric-sensitive</div>
+                        </div>
                     </div>
                 </motion.div>
             </div>

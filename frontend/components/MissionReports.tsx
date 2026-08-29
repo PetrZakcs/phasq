@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { CASES } from '@/lib/cases';
 import SignalReadout from './SignalReadout';
+import CountUp from './CountUp';
 
 export default function MissionReports() {
     const router = useRouter();
@@ -76,7 +77,16 @@ export default function MissionReports() {
                                                 {row.label}
                                             </div>
                                             <div className="font-data text-lg md:text-xl text-ink tabular-nums">
-                                                {row.value}
+                                                {row.numeric ? (
+                                                    <CountUp
+                                                        value={row.numeric.value}
+                                                        decimals={row.numeric.decimals}
+                                                        prefix={row.numeric.prefix}
+                                                        suffix={row.numeric.suffix}
+                                                    />
+                                                ) : (
+                                                    row.value
+                                                )}
                                             </div>
                                         </div>
                                     ))}

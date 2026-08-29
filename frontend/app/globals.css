@@ -192,7 +192,11 @@ body::after {
 .btn-primary:hover {
   background: var(--color-accent);
   color: var(--color-ink);
-  transform: translateY(-1px);
+  transform: translateY(-1px) scale(1.015);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.99);
 }
 
 .btn-outline {
@@ -214,6 +218,33 @@ body::after {
 .btn-outline:hover {
   border-color: var(--color-ink-soft);
   background: rgba(241, 238, 226, 0.04);
+  transform: translateY(-1px) scale(1.015);
+}
+
+.btn-outline:active {
+  transform: translateY(0) scale(0.99);
+}
+
+/* ===== Nav links — underline grows from the left on hover ===== */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
 }
 
 /* ===== Data readouts ===== */

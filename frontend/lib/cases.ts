@@ -1,3 +1,10 @@
+interface StatNumeric {
+    value: number;
+    decimals?: number;
+    prefix?: string;
+    suffix?: string;
+}
+
 export interface CaseStudy {
     slug: string;
     id: string;
@@ -7,7 +14,7 @@ export interface CaseStudy {
     bbox: string;
     window: string;
     sensor: string;
-    stats: { label: string; value: string }[];
+    stats: { label: string; value: string; numeric?: StatNumeric }[];
     minDb: number;
     maxDb: number;
     meanDb: number;
@@ -38,10 +45,10 @@ export const CASES: CaseStudy[] = [
         maxDb: 25.8,
         meanDb: -11.8,
         stats: [
-            { label: 'Mean σ⁰ (VV)', value: '−11.80 dB' },
+            { label: 'Mean σ⁰ (VV)', value: '−11.80 dB', numeric: { value: -11.8, decimals: 2, suffix: ' dB' } },
             { label: 'Range', value: '−45.3 to +25.8 dB' },
             { label: 'Classification', value: 'Mild drought' },
-            { label: 'Soil moisture index', value: '62%' },
+            { label: 'Soil moisture index', value: '62%', numeric: { value: 62, suffix: '%' } },
         ],
         verify: {
             product: 'Sentinel-1 GRD',

@@ -31,7 +31,6 @@ export default function Navbar() {
 
     return (
         <>
-            <div className="fixed top-0 left-0 right-0 z-[101] legend-strip" />
             <nav
                 className={`fixed top-[3px] left-0 right-0 z-[100] flex items-center justify-between transition-all duration-300 ${
                     scrolled ? 'bg-ground/90 backdrop-blur-xl border-b border-line py-4 px-6 md:px-10' : 'bg-transparent py-6 px-6 md:px-10'
@@ -46,7 +45,7 @@ export default function Navbar() {
                         <Link
                             key={item.name}
                             href={item.href}
-                            className="text-[13px] font-medium text-ink-soft hover:text-ink transition-colors"
+                            className="nav-link text-[13px] font-medium text-ink-soft hover:text-ink transition-colors"
                         >
                             {item.name}
                         </Link>

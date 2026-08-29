@@ -1,6 +1,8 @@
 import { Big_Shoulders, Public_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import ScrollGauge from "@/components/ScrollGauge";
+import PageTransition from "@/components/PageTransition";
 
 // Display face — condensed, industrial. Used for headlines only.
 const bigShoulders = Big_Shoulders({
@@ -25,9 +27,28 @@ const plexMono = IBM_Plex_Mono({
 
 import type { Metadata } from "next";
 
+const TITLE = "PhasQ — Radar Intelligence Platform";
+const DESCRIPTION = "Physics-based Synthetic Aperture Radar analysis. All-weather satellite intelligence for agriculture, defense, and space.";
+
 export const metadata: Metadata = {
-  title: "PhasQ — Radar Intelligence Platform",
-  description: "Physics-based Synthetic Aperture Radar analysis. All-weather satellite intelligence for agriculture, defense, and infrastructure.",
+  // TODO: update once the production domain is finalized (phasq.tech vs. current *.vercel.app)
+  metadataBase: new URL("https://phasq.tech"),
+  title: {
+    default: TITLE,
+    template: "%s — PhasQ",
+  },
+  description: DESCRIPTION,
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    siteName: "PhasQ",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
 };
 
 export default function RootLayout({
@@ -40,7 +61,8 @@ export default function RootLayout({
       <body
         className={`${bigShoulders.variable} ${publicSans.variable} ${plexMono.variable} antialiased`}
       >
-        {children}
+        <ScrollGauge />
+        <PageTransition>{children}</PageTransition>
         <Analytics />
       </body>
     </html>

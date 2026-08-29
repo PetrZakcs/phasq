@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import CountUp from './CountUp';
 
 export default function Coverage() {
     return (
@@ -14,7 +15,7 @@ export default function Coverage() {
                 <div className="section-label">The blind spot</div>
 
                 <h2 className="heading-xl text-[3.4rem] sm:text-[4.5rem] md:text-[6rem] text-ink mb-6">
-                    ~67%
+                    <CountUp value={67} prefix="~" suffix="%" duration={1.4} />
                 </h2>
                 <p className="text-ink-soft text-base md:text-lg leading-relaxed max-w-[56ch] mb-16">
                     That&apos;s the long-term average share of Earth covered by cloud at any given moment
@@ -35,7 +36,13 @@ export default function Coverage() {
                             <span className="font-data text-xs text-ink-faint">clear-sky windows only</span>
                         </div>
                         <div className="h-3 w-full bg-surface border border-line overflow-hidden">
-                            <div className="h-full bg-line-strong" style={{ width: '33%' }} />
+                            <motion.div
+                                className="h-full bg-line-strong"
+                                initial={{ width: 0 }}
+                                whileInView={{ width: '33%' }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1, delay: 0.15, ease: 'easeOut' }}
+                            />
                         </div>
                     </motion.div>
 
@@ -50,7 +57,13 @@ export default function Coverage() {
                             <span className="font-data text-xs text-accent">continuous, every 6 days</span>
                         </div>
                         <div className="h-3 w-full bg-surface border border-line overflow-hidden">
-                            <div className="legend-strip h-full w-full" />
+                            <motion.div
+                                className="legend-strip h-full"
+                                initial={{ width: 0 }}
+                                whileInView={{ width: '100%' }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1, delay: 0.25, ease: 'easeOut' }}
+                            />
                         </div>
                     </motion.div>
                 </div>

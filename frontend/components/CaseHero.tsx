@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import type { CaseStudy } from '@/lib/cases';
 import SignalReadout from './SignalReadout';
+import CountUp from './CountUp';
 
 export default function CaseHero({ item }: { item: CaseStudy }) {
     return (
@@ -60,7 +61,16 @@ export default function CaseHero({ item }: { item: CaseStudy }) {
                                     {row.label}
                                 </div>
                                 <div className="font-data text-xl md:text-2xl text-ink tabular-nums">
-                                    {row.value}
+                                    {row.numeric ? (
+                                        <CountUp
+                                            value={row.numeric.value}
+                                            decimals={row.numeric.decimals}
+                                            prefix={row.numeric.prefix}
+                                            suffix={row.numeric.suffix}
+                                        />
+                                    ) : (
+                                        row.value
+                                    )}
                                 </div>
                             </div>
                         ))}
