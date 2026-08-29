@@ -3,6 +3,8 @@
 import Navbar from "@/components/Navbar";
 import SectorHero from "@/components/SectorHero";
 import CapabilityList from "@/components/CapabilityList";
+import Coverage from "@/components/Coverage";
+import ProcessSteps from "@/components/ProcessSteps";
 import ContactCTA from "@/components/ContactCTA";
 import Footer from "@/components/Footer";
 
@@ -38,6 +40,9 @@ export default function DefensePage() {
                     { title: 'Dark vessel detection', desc: 'Maritime SAR scans flag radar returns with no matching AIS transponder signal.' },
                 ]}
             />
+
+            <Coverage />
+            <ProcessSteps />
 
             {/* Credibility anchor: real physics, not a fabricated case study */}
             <section id="physics" className="py-24 md:py-32 bg-surface border-t border-line">

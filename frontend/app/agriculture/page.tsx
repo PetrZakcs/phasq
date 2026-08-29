@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import SectorHero from "@/components/SectorHero";
 import TruthSlider from "@/components/TruthSlider";
 import CapabilityList from "@/components/CapabilityList";
+import PipelineReveal from "@/components/PipelineReveal";
+import Benefits from "@/components/Benefits";
 import MissionReports from "@/components/MissionReports";
 import Waitlist from "@/components/Waitlist";
 import Footer from "@/components/Footer";
@@ -54,6 +56,8 @@ export default function AgriculturePage() {
                 </div>
             </section>
 
+            <PipelineReveal />
+
             <CapabilityList
                 eyebrow="What it does"
                 heading={<>Built for the<br />growing season.</>}
@@ -65,6 +69,8 @@ export default function AgriculturePage() {
                     { title: 'Variable-rate maps (VRA)', desc: 'Export-ready moisture zones for variable-rate irrigation and input planning.' },
                 ]}
             />
+
+            <Benefits />
 
             <MissionReports />
 
