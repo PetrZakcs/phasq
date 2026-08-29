@@ -13,6 +13,7 @@ import FAQ from "@/components/FAQ";
 import TruthSlider from "@/components/TruthSlider";
 import PipelineReveal from "@/components/PipelineReveal";
 import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -60,7 +61,13 @@ export default function Home() {
           <div className="section-label">Early access — opening Q2 2026</div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
-            <div className="flex flex-col">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.6 }}
+              className="flex flex-col"
+            >
               <h2 className="heading-lg text-ink mb-6">
                 Agriculture<br />intelligence.
               </h2>
@@ -72,13 +79,19 @@ export default function Home() {
               <a href="#waitlist" className="btn-outline w-fit">
                 Join the pilot list ↗
               </a>
-            </div>
+            </motion.div>
 
-            <div className="relative aspect-video border border-line overflow-hidden bg-ground flex items-center justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20, scale: 1.02 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="relative aspect-video border border-line overflow-hidden bg-ground flex items-center justify-center"
+            >
               <img
                 src="/radar.png"
                 alt="Illustrative backscatter visualization"
-                className="w-full h-full object-cover grayscale opacity-40"
+                className="ambient-zoom w-full h-full object-cover grayscale opacity-40"
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center bg-ground/50 backdrop-blur-sm">
                 <div className="eyebrow text-accent mb-2">Field-scale coverage</div>
@@ -90,7 +103,7 @@ export default function Home() {
               <span className="absolute bottom-3 right-4 font-data text-[9px] tracking-[0.15em] uppercase text-ink/40">
                 Illustrative — not a live field export
               </span>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

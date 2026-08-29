@@ -55,12 +55,13 @@ export default function Features() {
                     {SECTORS.map((s, i) => {
                         const RowContent = (
                             <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
+                                initial={{ opacity: 0, y: 16 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.08, duration: 0.5 }}
                                 viewport={{ once: true }}
-                                className="flex flex-col md:grid md:grid-cols-[80px_1fr_1fr_auto] gap-6 md:gap-12 lg:gap-16 py-10 md:py-14 border-b border-line hover:bg-surface/60 transition-colors duration-300"
+                                className="group/row relative flex flex-col md:grid md:grid-cols-[80px_1fr_1fr_auto] gap-6 md:gap-12 lg:gap-16 py-10 md:py-14 pl-0 border-b border-line hover:bg-surface/60 hover:pl-4 transition-[background-color,padding] duration-300"
                             >
+                                <span className="absolute left-0 top-0 bottom-0 w-0.5 bg-accent scale-y-0 group-hover/row:scale-y-100 origin-top transition-transform duration-300" />
                                 <div className="font-data text-[13px] text-ink-faint shrink-0">
                                     {s.id}
                                 </div>
