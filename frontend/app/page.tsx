@@ -67,8 +67,9 @@ export default function Home() {
                 validated single-region pipeline (see the verified analysis above) to full field-scale
                 coverage. We&apos;re building this in the open, not behind a locked door.
               </p>
-              <a href="#waitlist" className="btn-outline w-fit">
-                Join the pilot list ↗
+              <a href="#waitlist" className="btn-outline group w-fit">
+                Join the pilot list
+                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">↗</span>
               </a>
             </div>
 

@@ -96,9 +96,10 @@ export default function SectorHero({
                             href={primaryCta.href}
                             target={primaryCta.external ? '_blank' : undefined}
                             rel={primaryCta.external ? 'noopener noreferrer' : undefined}
-                            className="btn-primary w-full sm:w-auto text-center"
+                            className="btn-primary group w-full sm:w-auto text-center"
                         >
-                            {primaryCta.label}
+                            {primaryCta.label.replace(/\s*↗\s*$/, '')}
+                            <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">↗</span>
                         </a>
                         <a
                             href={secondaryCta.href}

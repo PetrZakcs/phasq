@@ -49,9 +49,16 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 28 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.1 }}
-                    className="heading-xl text-ink mb-8 max-w-[18ch]"
+                    className="heading-xl text-ink mb-8 max-w-[20ch]"
                 >
-                    Sees the drought<br />
+                    Sees the drought{' '}
+                    <span className="inline-signal w-[1.05em] h-[1.05em] rounded-md align-middle mx-1 -translate-y-[0.05em]">
+                        <img src="/headline-inline-radar.jpg" alt="" aria-hidden="true" />
+                        <span className="inline-signal-tag font-data text-[0.15em] leading-none tracking-[0.02em] text-ink-faint">
+                            σ⁰
+                        </span>
+                    </span>
+                    <br />
                     before <span className="text-accent">the crop does.</span>
                 </motion.h1>
 
@@ -68,8 +75,9 @@ export default function Hero() {
                     </p>
 
                     <div className="flex flex-wrap gap-3 shrink-0">
-                        <a href="#demo" className="btn-primary w-full sm:w-auto text-center">
-                            See real data ↗
+                        <a href="#demo" className="btn-primary group w-full sm:w-auto text-center">
+                            See real data
+                            <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">↗</span>
                         </a>
                         <a href="#process" className="btn-outline w-full sm:w-auto text-center">
                             How it works

@@ -65,9 +65,10 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                                 href="https://browser.dataspace.copernicus.eu/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="btn-primary w-fit"
+                                className="btn-primary group w-fit"
                             >
-                                Open Copernicus Browser ↗
+                                Open Copernicus Browser
+                                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">↗</span>
                             </a>
                         </div>
 
