@@ -77,16 +77,16 @@ export default function DefensePage() {
 
             <Roadmap
                 eyebrow="Where this is going"
-                heading={<>The satellite gives the alert.<br />The gap is what happens next.</>}
+                heading={<>We&apos;re not building the drone.<br />We&apos;re reading what it sees.</>}
                 body={[
-                    "A 6-day revisit is wide, all-weather coverage — and also a real gap: whatever changes at hour 2 of that cycle isn't confirmed until hour 144. That gap is exactly what defense ISR programs already solve by pairing wide-area satellite cueing with a drone or UAS that closes in and holds the target in view.",
-                    "We're designing toward the same architecture: the same physics engine — radar backscatter, phase coherence — applied to drone-mounted SAR and EO feeds, so a satellite-flagged anomaly can be picked up and tracked in near-real-time instead of waiting for the next pass.",
-                    "This isn't shipped. We'd rather show you the direction honestly than imply a capability that doesn't exist yet — and if persistent, real-time coverage between passes matters to your program, that's a conversation worth having now, while the architecture is still being shaped around real requirements.",
+                    "A 6-day satellite revisit is wide, all-weather coverage — and also a real gap: whatever changes at hour 2 isn't confirmed until hour 144. Defense ISR programs already close that gap by pairing satellite cueing with a drone that holds the site in view. We're not going to out-build the companies that make that possible — IMSAR and PierSight already build excellent small SAR payloads; Anduril, Helsing, and Shield AI already build the autonomy and fusion platforms around them, at a scale we can't and shouldn't try to match.",
+                    "What we're extending instead is the calibration layer underneath: the same radiometric calibration and backscatter physics we already run on Sentinel-1, pointed at a drone-mounted SAR feed instead — whoever's antenna it is. A satellite flags an anomaly; a partner's drone confirms it; our engine turns both returns into the same explainable number, on the same scale, either way.",
+                    "This isn't shipped, and we're not trying to become a hardware or autonomy company. If you already fly a SAR-equipped drone and the interpretation layer is the missing piece, that's the conversation worth having now — not us pitching a drone we have no business building.",
                 ]}
                 items={[
-                    { title: 'Drone / UAS sensor fusion', desc: 'Extending the calibration pipeline to drone-mounted SAR and EO payloads, not just satellite passes.' },
-                    { title: 'Continuous custody', desc: 'Hold a satellite-flagged site in view between the 6-day revisit windows, not just re-check it next pass.' },
-                    { title: 'Edge-side cueing', desc: 'Push the anomaly-detection step closer to the sensor so a flag can trigger a response in minutes, not after downlink.' },
+                    { title: 'Sensor-agnostic calibration', desc: 'The same radiometric calibration and backscatter physics regardless of whether the antenna is Sentinel-1 or a partner\'s drone-mounted SAR pod.' },
+                    { title: 'Continuous custody', desc: 'Hold a satellite-flagged site in view between 6-day revisit windows using a partner\'s drone payload — not one we build ourselves.' },
+                    { title: 'Integration, not hardware', desc: 'We plug into existing SAR payloads and autonomy stacks. Building the drone or the radar pod is someone else\'s discipline, not ours.' },
                 ]}
             />
 
