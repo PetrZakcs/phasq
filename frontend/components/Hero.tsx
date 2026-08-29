@@ -1,15 +1,45 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Hero() {
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const [showVideo, setShowVideo] = useState(false);
+
+    useEffect(() => {
+        // Respect prefers-reduced-motion: fall back to the static poster frame.
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        setShowVideo(!reduced);
+    }, []);
+
     return (
         <section className="relative min-h-[100svh] w-full flex flex-col justify-end bg-ground overflow-hidden py-24 md:py-32 lg:py-40">
-            {/* Full-bleed background image */}
-            <div
-                className="absolute inset-0 bg-[url('/vysocina_radar.png')] bg-center bg-cover opacity-25 grayscale contrast-125"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-ground/40 via-ground/70 to-ground" />
+            {/* Full-bleed background — real aerial farmland footage, muted for legibility */}
+            <div className="absolute inset-0">
+                {showVideo ? (
+                    <video
+                        ref={videoRef}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        poster="/hero-farm-poster.jpg"
+                        className="w-full h-full object-cover saturate-[0.65] contrast-105"
+                    >
+                        <source src="/hero-farm-mobile.mp4" media="(max-width: 768px)" type="video/mp4" />
+                        <source src="/hero-farm-desktop.mp4" type="video/mp4" />
+                    </video>
+                ) : (
+                    <div
+                        className="w-full h-full bg-[url('/hero-farm-poster.jpg')] bg-center bg-cover saturate-[0.65] contrast-105"
+                    />
+                )}
+                <span className="absolute bottom-4 right-5 font-data text-[9px] tracking-[0.15em] uppercase text-ink/40">
+                    Aerial farmland — illustrative, not PhasQ output
+                </span>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-b from-ground/55 via-ground/75 to-ground" />
 
             {/* Content */}
             <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10 lg:px-20">
