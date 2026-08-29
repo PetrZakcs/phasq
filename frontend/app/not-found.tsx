@@ -16,9 +16,8 @@ export default function NotFound() {
                         The page you&apos;re looking for doesn&apos;t exist, or the coordinates changed.
                         Radar doesn&apos;t hallucinate a return where there isn&apos;t one — so neither do we.
                     </p>
-                    <Link href="/" className="btn-primary group w-fit">
-                        Back to the homepage
-                        <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">↗</span>
+                    <Link href="/" className="btn-primary w-fit">
+                        Back to the homepage ↗
                     </Link>
                 </div>
             </section>

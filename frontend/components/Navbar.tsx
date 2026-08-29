@@ -73,10 +73,9 @@ export default function Navbar() {
 
                     <Link
                         href="#waitlist"
-                        className="group text-[13px] font-semibold text-ground bg-ink px-5 py-2.5 flex items-center gap-2 hover:bg-accent hover:text-ink transition-all"
+                        className="text-[13px] font-semibold text-ground bg-ink px-5 py-2.5 flex items-center gap-2 hover:bg-accent hover:text-ink transition-all"
                     >
-                        Get access
-                        <span className="hidden sm:inline-block transition-transform duration-300 group-hover:translate-x-1">↗</span>
+                        Get access <span className="hidden sm:inline">↗</span>
                     </Link>
 
                     <button

@@ -31,10 +31,9 @@ export default function ContactCTA({ eyebrow, heading, subtext }: ContactCTAProp
                             href={CALENDLY_URL}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="btn-primary group w-full md:w-auto text-center"
+                            className="btn-primary w-full md:w-auto text-center"
                         >
-                            Book a call
-                            <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">↗</span>
+                            Book a call ↗
                         </a>
                         <a
                             href="mailto:petr@phasq.com"
