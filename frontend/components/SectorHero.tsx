@@ -1,7 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import BgVideo from './BgVideo';
+import ScrollCue from './ScrollCue';
 
 interface Cta {
     label: string;
@@ -36,19 +38,26 @@ export default function SectorHero({
     caption,
     videoClassName = 'saturate-[0.7] contrast-105',
 }: SectorHeroProps) {
+    const sectionRef = useRef<HTMLElement>(null);
+    const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end start'] });
+    const videoY = useTransform(scrollYProgress, [0, 1], ['0%', '-18%']);
+
     return (
-        <section className="relative min-h-[85svh] w-full flex flex-col justify-end bg-ground overflow-hidden py-24 md:py-32">
-            <div className="absolute inset-0">
+        <section
+            ref={sectionRef}
+            className="relative min-h-[85svh] w-full flex flex-col justify-end bg-ground overflow-hidden py-24 md:py-32"
+        >
+            <motion.div className="absolute inset-0" style={{ y: videoY }}>
                 <BgVideo
                     desktopSrc={videoDesktop}
                     mobileSrc={videoMobile}
                     poster={poster}
-                    className={`w-full h-full ${videoClassName}`}
+                    className={`w-full h-[130%] ${videoClassName}`}
                 />
                 <span className="absolute bottom-4 right-5 font-data text-[9px] tracking-[0.15em] uppercase text-ink/40">
                     {caption}
                 </span>
-            </div>
+            </motion.div>
             <div className="absolute inset-0 bg-gradient-to-b from-ground/55 via-ground/75 to-ground" />
 
             <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10 lg:px-20">
@@ -102,6 +111,8 @@ export default function SectorHero({
                     </div>
                 </motion.div>
             </div>
+
+            <ScrollCue />
         </section>
     );
 }

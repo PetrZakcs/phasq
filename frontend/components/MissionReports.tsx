@@ -61,7 +61,7 @@ export default function MissionReports() {
                                 <div className="font-data text-[10px] tracking-widest uppercase text-ink-faint mb-4">
                                     {item.location} · {item.window}
                                 </div>
-                                <h3 className="heading-lg text-[1.6rem] md:text-[2rem] text-ink leading-[1.1] mb-4">
+                                <h3 className="heading-sm text-ink leading-[1.1] mb-4">
                                     {item.title}
                                 </h3>
                                 <p className="text-ink-soft text-sm md:text-base leading-relaxed max-w-[46ch]">

@@ -18,6 +18,16 @@ export default function Footer() {
                         <p className="text-ink-faint text-sm md:text-base leading-relaxed max-w-[320px] mb-8">
                             Physics-based radar intelligence. Reading the actual radar return, not a picture of it.
                         </p>
+
+                        {/* Instrument nameplate — the same wet→extreme scale used on every reading */}
+                        <div className="max-w-[220px] mb-8">
+                            <div className="legend-strip mb-1.5" />
+                            <div className="flex justify-between font-data text-[8px] tracking-widest uppercase text-ink-faint">
+                                <span>Wet</span>
+                                <span>Extreme</span>
+                            </div>
+                        </div>
+
                         <div className="flex gap-6">
                             <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="text-ink-faint hover:text-ink transition-colors">
                                 <Instagram className="w-5 h-5" />

@@ -1,24 +1,35 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import BgVideo from './BgVideo';
 import CountUp from './CountUp';
+import ScrollCue from './ScrollCue';
 
 export default function Hero() {
+    const sectionRef = useRef<HTMLElement>(null);
+    const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end start'] });
+    // Video is 130% tall so it can shift up to -18% on scroll (parallax) without ever exposing an edge.
+    const videoY = useTransform(scrollYProgress, [0, 1], ['0%', '-18%']);
+
     return (
-        <section className="relative min-h-[100svh] w-full flex flex-col justify-end bg-ground overflow-hidden py-24 md:py-32 lg:py-40">
-            {/* Full-bleed background — real aerial farmland footage, muted for legibility */}
-            <div className="absolute inset-0">
+        <section
+            ref={sectionRef}
+            className="relative min-h-[100svh] w-full flex flex-col justify-end bg-ground overflow-hidden py-24 md:py-32 lg:py-40"
+        >
+            {/* Full-bleed background — real aerial farmland footage, muted for legibility.
+                Moves slightly slower than the content on scroll (parallax). */}
+            <motion.div className="absolute inset-0" style={{ y: videoY }}>
                 <BgVideo
                     desktopSrc="/hero-farm-desktop.mp4"
                     mobileSrc="/hero-farm-mobile.mp4"
                     poster="/hero-farm-poster.jpg"
-                    className="w-full h-full saturate-[0.65] contrast-105"
+                    className="w-full h-[130%] saturate-[0.65] contrast-105"
                 />
                 <span className="absolute bottom-4 right-5 font-data text-[9px] tracking-[0.15em] uppercase text-ink/40">
                     Aerial farmland — illustrative, not PhasQ output
                 </span>
-            </div>
+            </motion.div>
             <div className="absolute inset-0 bg-gradient-to-b from-ground/55 via-ground/75 to-ground" />
 
             {/* Content */}
@@ -101,6 +112,8 @@ export default function Hero() {
                     </div>
                 </motion.div>
             </div>
+
+            <ScrollCue />
         </section>
     );
 }

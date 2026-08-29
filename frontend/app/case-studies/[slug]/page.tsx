@@ -24,7 +24,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             <section className="py-24 md:py-32 bg-surface border-t border-line">
                 <div className="max-w-[900px] mx-auto px-6 md:px-10">
                     <div className="section-label">Why we&apos;re showing you this</div>
-                    <h2 className="heading-lg text-[2rem] md:text-[2.8rem] text-ink mb-8">
+                    <h2 className="heading-md text-ink mb-8">
                         We could have shown you a demo.<br />We showed you this instead.
                     </h2>
                     <div className="flex flex-col gap-5 text-ink-soft text-base md:text-lg leading-relaxed">
@@ -54,7 +54,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                     <div className="section-label">Reproduce this yourself</div>
                     <div className="grid grid-cols-1 md:grid-cols-[1fr_1.1fr] gap-12 md:gap-20">
                         <div>
-                            <h2 className="heading-lg text-[2rem] md:text-[2.6rem] text-ink mb-6">
+                            <h2 className="heading-md text-ink mb-6">
                                 Five minutes,<br />zero trust required.
                             </h2>
                             <p className="text-ink-soft text-base md:text-lg leading-relaxed mb-8 max-w-[46ch]">

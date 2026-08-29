@@ -25,38 +25,39 @@ const steps = [
 
 export default function ProcessSteps() {
     return (
-        <section id="process" className="py-24 md:py-32 bg-surface border-t border-line">
+        <section id="process" className="py-24 md:py-32 bg-ground border-t border-line">
             <div className="max-w-[1400px] mx-auto px-6 md:px-10">
                 <div className="section-label">Process</div>
 
-                <h2 className="heading-lg text-ink mb-16">
+                <h2 className="heading-lg text-ink mb-20">
                     From satellite<br />to insight.
                 </h2>
 
-                <div className="flex flex-col">
+                {/* A pipeline, not a list — three connected stages instead of stacked rows. */}
+                <div className="relative grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-14">
+                    <div className="hidden md:block absolute top-[22px] left-[calc(100%/6)] right-[calc(100%/6)] h-px bg-line" />
+
                     {steps.map((step, i) => (
                         <motion.div
                             key={step.num}
-                            initial={{ opacity: 0, x: -16 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ delay: i * 0.1, duration: 0.6 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: i * 0.15, duration: 0.6 }}
                             viewport={{ once: true }}
-                            className="flex flex-col md:grid md:grid-cols-[64px_1fr_140px] items-start md:items-center gap-6 md:gap-10 py-10 md:py-14 border-b border-line last:border-b-0"
+                            className="relative flex flex-col items-start"
                         >
-                            <div className="font-data text-lg text-accent">{step.num}</div>
-
-                            <div>
-                                <h3 className="text-xl md:text-2xl font-bold text-ink mb-2">{step.title}</h3>
-                                <p className="text-ink-soft text-sm md:text-base leading-relaxed max-w-[64ch]">
-                                    {step.desc}
-                                </p>
+                            <div className="relative z-10 w-11 h-11 rounded-full bg-surface border border-line-strong flex items-center justify-center mb-6">
+                                <span className="font-data text-sm text-accent">{step.num}</span>
                             </div>
 
-                            <div className="md:text-right w-full md:w-auto">
-                                <span className="inline-block font-data text-[10px] tracking-widest uppercase text-ink-faint border border-line px-4 py-1.5">
-                                    {step.tag}
-                                </span>
-                            </div>
+                            <span className="inline-block font-data text-[10px] tracking-widest uppercase text-ink-faint border border-line px-3 py-1 mb-4">
+                                {step.tag}
+                            </span>
+
+                            <h3 className="text-xl md:text-2xl font-bold text-ink mb-3">{step.title}</h3>
+                            <p className="text-ink-soft text-sm md:text-base leading-relaxed max-w-[46ch]">
+                                {step.desc}
+                            </p>
                         </motion.div>
                     ))}
                 </div>

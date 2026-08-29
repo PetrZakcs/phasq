@@ -22,7 +22,7 @@ const BENEFITS = [
 
 export default function Benefits() {
     return (
-        <section className="py-24 md:py-32 bg-ground border-t border-line">
+        <section className="py-24 md:py-32 bg-surface border-t border-line">
             <div className="max-w-[1400px] mx-auto px-6 md:px-10">
                 <div className="section-label">Advantage</div>
 

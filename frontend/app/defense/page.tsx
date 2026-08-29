@@ -44,7 +44,7 @@ export default function DefensePage() {
                 <div className="max-w-[1400px] mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-12 md:gap-20">
                     <div>
                         <div className="section-label">Why this holds up</div>
-                        <h2 className="heading-lg text-[2.2rem] md:text-[2.8rem] text-ink">
+                        <h2 className="heading-md text-ink">
                             No case study yet.<br />Here&apos;s the physics instead.
                         </h2>
                     </div>
