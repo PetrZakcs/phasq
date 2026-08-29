@@ -75,15 +75,19 @@ export default function Home() {
             <div className="relative aspect-video border border-line overflow-hidden bg-ground flex items-center justify-center">
               <img
                 src="/radar.png"
-                alt="Sentinel-1 radar backscatter preview"
+                alt="Illustrative backscatter visualization"
                 className="w-full h-full object-cover grayscale opacity-40"
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center bg-ground/50 backdrop-blur-sm">
                 <div className="eyebrow text-accent mb-2">Field-scale coverage</div>
                 <p className="text-ink-soft text-sm max-w-[32ch]">
-                  Currently one validated region. Expanding through the pilot program.
+                  Currently one validated region (see the verified analysis above). Expanding through the
+                  pilot program.
                 </p>
               </div>
+              <span className="absolute bottom-3 right-4 font-data text-[9px] tracking-[0.15em] uppercase text-ink/40">
+                Illustrative — not a live field export
+              </span>
             </div>
           </div>
         </div>

@@ -97,6 +97,22 @@
   }
 }
 
+/* ===== Ambient grain ===== */
+/* A synthesized SAR speckle pattern (Gamma-distributed multi-look noise —
+   the actual statistical model real radar speckle follows), used purely as
+   texture. Not a claim about any specific scene. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  background-image: url('/speckle-grain.png');
+  background-repeat: repeat;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+}
+
 /* ===== Instrument legend — the recurring brand device ===== */
 .legend-strip {
   height: 3px;

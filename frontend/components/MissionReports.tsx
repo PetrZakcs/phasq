@@ -1,27 +1,25 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-
-// Real run of the pipeline against the actual Sentinel-1 archive — not a
-// simulation. Anyone can reproduce these numbers: same region, same date
-// range, same product type, in the free Copernicus Browser.
-const CASE = {
-    id: 'CASE-01',
-    title: 'Mild drought, read straight off the radar return',
-    location: 'Andalusia, Spain — 37.5°N–38.5°N, 6.0°W–5.0°W',
-    window: 'Jul 1–31, 2023',
-    sensor: 'Sentinel-1, VV, GRD, 10 m — 18 scenes',
-    image: '/vysocina_radar.png',
-    stats: [
-        { label: 'Mean σ⁰ (VV)', value: '−11.80 dB' },
-        { label: 'Range', value: '−45.3 to +25.8 dB' },
-        { label: 'Classification', value: 'Mild drought' },
-        { label: 'Soil moisture index', value: '62%' },
-    ],
-};
+import { ArrowUpRight } from 'lucide-react';
+import { CASES } from '@/lib/cases';
+import SignalReadout from './SignalReadout';
 
 export default function MissionReports() {
+    const router = useRouter();
+    const [leaving, setLeaving] = useState(false);
+    const item = CASES[0];
+    const href = `/case-studies/${item.slug}`;
+
+    const handleClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        if (leaving) return;
+        setLeaving(true);
+        window.setTimeout(() => router.push(href), 420);
+    };
+
     return (
         <section id="missions" className="py-24 md:py-32 bg-surface border-t border-line">
             <div className="max-w-[1400px] mx-auto px-6 md:px-10">
@@ -38,55 +36,59 @@ export default function MissionReports() {
                     </p>
                 </div>
 
-                <motion.div
+                <motion.a
+                    href={href}
+                    onClick={handleClick}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
+                    animate={leaving ? { opacity: 0, scale: 1.03 } : { opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    className="grid grid-cols-1 md:grid-cols-2 bg-ground border border-line overflow-hidden"
+                    transition={leaving ? { duration: 0.4, ease: 'easeIn' } : { duration: 0.5 }}
+                    className="group block bg-ground border border-line hover:border-line-strong transition-colors cursor-pointer"
                 >
-                    <div className="relative aspect-video md:aspect-auto overflow-hidden border-b md:border-b-0 md:border-r border-line">
-                        <Image
-                            src={CASE.image}
-                            alt={CASE.title}
-                            fill
-                            className="object-cover grayscale contrast-[1.15]"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-br from-ground/70 to-transparent pointer-events-none" />
-                        <div className="absolute top-5 left-5 font-data text-[10px] tracking-widest uppercase text-ink-soft bg-ground/80 px-3 py-1 backdrop-blur-sm">
-                            {CASE.id}
-                        </div>
-                        <div className="absolute bottom-5 left-5 font-data text-[10px] text-ink-faint tracking-widest uppercase">
-                            {CASE.sensor}
-                        </div>
-                    </div>
-
-                    <div className="p-8 md:p-12 lg:p-14 flex flex-col justify-between">
-                        <div className="mb-10">
-                            <div className="font-data text-[10px] tracking-widest uppercase text-ink-faint mb-4">
-                                {CASE.location} · {CASE.window}
+                    <div className="grid grid-cols-1 md:grid-cols-2">
+                        <div className="relative overflow-hidden border-b md:border-b-0 md:border-r border-line p-8 md:p-10 flex flex-col justify-between bg-surface/40">
+                            <div className="font-data text-[10px] tracking-widest uppercase text-ink-faint mb-6">
+                                {item.id} — Signal readout
                             </div>
-                            <h3 className="heading-lg text-[1.6rem] md:text-[2rem] text-ink leading-[1.1]">
-                                {CASE.title}
-                            </h3>
+                            <SignalReadout seed={item.slug} minDb={item.minDb} maxDb={item.maxDb} meanDb={item.meanDb} />
+                            <div className="legend-strip mt-6" />
                         </div>
 
-                        <div className="space-y-8">
-                            <div className="legend-strip" />
-                            <div className="grid grid-cols-2 gap-x-6 gap-y-6 border-t border-line pt-6">
-                                {CASE.stats.map((row) => (
-                                    <div key={row.label}>
-                                        <div className="font-data text-[10px] tracking-widest uppercase text-ink-faint mb-2">
-                                            {row.label}
+                        <div className="p-8 md:p-12 lg:p-14 flex flex-col justify-between">
+                            <div className="mb-10">
+                                <div className="font-data text-[10px] tracking-widest uppercase text-ink-faint mb-4">
+                                    {item.location} · {item.window}
+                                </div>
+                                <h3 className="heading-lg text-[1.6rem] md:text-[2rem] text-ink leading-[1.1] mb-4">
+                                    {item.title}
+                                </h3>
+                                <p className="text-ink-soft text-sm md:text-base leading-relaxed max-w-[46ch]">
+                                    {item.dek}
+                                </p>
+                            </div>
+
+                            <div className="space-y-8">
+                                <div className="grid grid-cols-2 gap-x-6 gap-y-6 border-t border-line pt-6">
+                                    {item.stats.map((row) => (
+                                        <div key={row.label}>
+                                            <div className="font-data text-[10px] tracking-widest uppercase text-ink-faint mb-2">
+                                                {row.label}
+                                            </div>
+                                            <div className="font-data text-lg md:text-xl text-ink tabular-nums">
+                                                {row.value}
+                                            </div>
                                         </div>
-                                        <div className="font-data text-lg md:text-xl text-ink tabular-nums">
-                                            {row.value}
-                                        </div>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
+
+                                <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-ink-soft group-hover:text-ink transition-colors">
+                                    Full case &amp; how to verify it <ArrowUpRight className="w-3.5 h-3.5" />
+                                </span>
                             </div>
                         </div>
                     </div>
-                </motion.div>
+                </motion.a>
             </div>
         </section>
     );
