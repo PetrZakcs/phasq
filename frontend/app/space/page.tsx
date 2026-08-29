@@ -10,7 +10,7 @@ const CALENDLY_URL = "https://calendly.com/petr-phasq/30min";
 
 export default function SpacePage() {
     return (
-        <main className="bg-ground text-ink selection:bg-accent/30 overflow-x-hidden">
+        <main className="bg-ground text-ink selection:bg-accent/30">
             <Navbar />
 
             <SectorHero

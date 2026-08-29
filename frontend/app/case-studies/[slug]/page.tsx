@@ -5,6 +5,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Waitlist from '@/components/Waitlist';
 import CaseHero from '@/components/CaseHero';
+import BigStat from '@/components/BigStat';
+import VerifyTerminal from '@/components/VerifyTerminal';
 
 export function generateStaticParams() {
     return CASES.map((c) => ({ slug: c.slug }));
@@ -16,7 +18,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
     if (!item) notFound();
 
     return (
-        <main className="bg-ground text-ink selection:bg-accent/30 overflow-x-hidden">
+        <main className="bg-ground text-ink selection:bg-accent/30">
             <Navbar />
             <CaseHero item={item} />
 
@@ -48,6 +50,14 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                 </div>
             </section>
 
+            <BigStat
+                eyebrow="The number everything above is built on"
+                value={item.meanDb}
+                decimals={2}
+                suffix=" dB"
+                caption={`Mean σ⁰ (VV) over ${item.location} — ${item.window}. Every classification, every stat above, and the rendering in the hero are all downstream of this one measured value.`}
+            />
+
             {/* Reproduce it yourself */}
             <section className="py-24 md:py-32 bg-ground border-t border-line">
                 <div className="max-w-[1400px] mx-auto px-6 md:px-10">
@@ -71,21 +81,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                             </a>
                         </div>
 
-                        <div className="bg-surface border border-line p-6 md:p-8 font-data text-[13px] leading-relaxed">
-                            {[
-                                ['Product', item.verify.product],
-                                ['Polarization', item.verify.polarization],
-                                ['Resolution', item.verify.resolution],
-                                ['Scenes returned', item.verify.scenes],
-                                ['Date range', item.verify.dateRange],
-                                ['Area (WKT)', item.verify.bbox],
-                            ].map(([k, v]) => (
-                                <div key={k} className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 py-3 border-b border-line last:border-b-0">
-                                    <span className="text-ink-faint w-40 shrink-0 uppercase tracking-widest text-[10px] sm:pt-0.5">{k}</span>
-                                    <span className="text-ink break-all">{v}</span>
-                                </div>
-                            ))}
-                        </div>
+                        <VerifyTerminal item={item} />
                     </div>
                 </div>
             </section>

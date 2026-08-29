@@ -11,11 +11,12 @@ import Benefits from "@/components/Benefits";
 import Waitlist from "@/components/Waitlist";
 import FAQ from "@/components/FAQ";
 import TruthSlider from "@/components/TruthSlider";
+import PipelineReveal from "@/components/PipelineReveal";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="bg-ground text-ink selection:bg-accent/30 overflow-x-hidden">
+    <main className="bg-ground text-ink selection:bg-accent/30">
       <Navbar />
       <Hero />
       <TrustLogos />
@@ -51,6 +52,7 @@ export default function Home() {
       <Coverage />
       <Benefits />
       <ProcessSteps />
+      <PipelineReveal />
 
       {/* Agriculture — honest early access, no theater */}
       <section className="py-24 md:py-32 bg-surface border-t border-line">

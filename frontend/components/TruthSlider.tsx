@@ -19,6 +19,7 @@ export default function TruthSlider({
     const [sliderPosition, setSliderPosition] = useState(50);
     const [isDragging, setIsDragging] = useState(false);
     const [containerWidth, setContainerWidth] = useState(0);
+    const [hasDemoed, setHasDemoed] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
 
     // Update container width on resize
@@ -36,7 +37,35 @@ export default function TruthSlider({
         return () => window.removeEventListener('resize', updateWidth);
     }, []);
 
-    const handleMouseDown = () => setIsDragging(true);
+    // First time the slider scrolls into view, nudge it once to teach the
+    // interaction — then get out of the way and never do it again.
+    useEffect(() => {
+        if (hasDemoed || !containerRef.current) return;
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduced) return;
+
+        const el = containerRef.current;
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (!entry.isIntersecting) return;
+                setHasDemoed(true);
+                observer.disconnect();
+
+                const keyframes = [50, 78, 22, 50];
+                keyframes.forEach((pos, i) => {
+                    window.setTimeout(() => setSliderPosition(pos), 500 + i * 650);
+                });
+            },
+            { threshold: 0.5 }
+        );
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, [hasDemoed]);
+
+    const handleMouseDown = () => {
+        setHasDemoed(true);
+        setIsDragging(true);
+    };
 
     useEffect(() => {
         const handleGlobalMouseUp = () => setIsDragging(false);
@@ -62,6 +91,7 @@ export default function TruthSlider({
     }, [isDragging]);
 
     const handleTouchMove = (e: React.TouchEvent) => {
+        setHasDemoed(true);
         if (!containerRef.current) return;
         const containerRect = containerRef.current.getBoundingClientRect();
         const relativeX = e.touches[0].clientX - containerRect.left;
@@ -95,7 +125,11 @@ export default function TruthSlider({
             {/* Foreground Image (Before - Optical) */}
             <div
                 className="absolute inset-0 h-full overflow-hidden border-r border-ink/50"
-                style={{ width: `${sliderPosition}%`, zIndex: 10 }}
+                style={{
+                    width: `${sliderPosition}%`,
+                    zIndex: 10,
+                    transition: isDragging ? 'none' : 'width 0.6s cubic-bezier(0.65, 0, 0.35, 1)',
+                }}
             >
                 <img
                     src={beforeImage}
@@ -112,7 +146,10 @@ export default function TruthSlider({
             {/* Handle */}
             <div
                 className="absolute top-0 bottom-0 w-0.5 bg-ink z-20 cursor-ew-resize shadow-[0_0_20px_rgba(0,0,0,0.8)]"
-                style={{ left: `${sliderPosition}%` }}
+                style={{
+                    left: `${sliderPosition}%`,
+                    transition: isDragging ? 'none' : 'left 0.6s cubic-bezier(0.65, 0, 0.35, 1)',
+                }}
             >
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-ink rounded-full flex items-center justify-center shadow-lg transform transition-transform group-hover:scale-110">
                     <MoveHorizontal className="w-4 h-4 text-ground" />

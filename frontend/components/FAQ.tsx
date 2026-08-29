@@ -40,7 +40,7 @@ export default function FAQ() {
             <div className="max-w-[1400px] mx-auto px-6 md:px-10">
                 <div className="section-label">FAQ</div>
 
-                <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-12 md:gap-20 items-start">
+                <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-12 md:gap-20">
                     <h2 className="heading-lg text-[2.6rem] md:text-[3.4rem] text-ink md:sticky md:top-32">
                         Questions<br />&amp; answers.
                     </h2>
