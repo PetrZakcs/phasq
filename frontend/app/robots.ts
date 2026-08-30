@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
             userAgent: '*',
             allow: '/',
         },
-        sitemap: 'https://phasq.tech/sitemap.xml',
+        sitemap: 'https://phasq.com/sitemap.xml',
     };
 }

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { CASES } from '@/lib/cases';
 
-const BASE_URL = 'https://phasq.tech';
+const BASE_URL = 'https://phasq.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const staticRoutes = ['', '/agriculture', '/defense', '/space'].map((path) => ({

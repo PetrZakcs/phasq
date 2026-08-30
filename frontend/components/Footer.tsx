@@ -20,7 +20,7 @@ export default function Footer() {
                 >
                     <div className="flex flex-col col-span-2">
                         <div className="font-display text-2xl font-bold text-ink mb-6">
-                            PHASQ<span className="text-accent">.tech</span>
+                            PHASQ<span className="text-accent">.com</span>
                         </div>
                         <p className="text-ink-faint text-sm md:text-base leading-relaxed max-w-[320px] mb-8">
                             Physics-based radar intelligence. Reading the actual radar return, not a picture of it.
@@ -80,8 +80,6 @@ export default function Footer() {
                     </div>
 
                     <div className="flex flex-col gap-4">
-                        <h4 className="eyebrow mb-2">System</h4>
-                        <span className="font-data text-[10px] text-ink-faint tracking-[0.15em]">v1.2.5 — DEMO MODE</span>
                         <span className="font-data text-[10px] text-ink-faint tracking-[0.15em]">© 2026 PHASQ TECHNOLOGIES</span>
                     </div>
                 </motion.div>

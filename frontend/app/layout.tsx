@@ -32,8 +32,7 @@ const TITLE = "PhasQ — Radar Intelligence Platform";
 const DESCRIPTION = "Physics-based Synthetic Aperture Radar analysis. All-weather satellite intelligence for agriculture, defense, and space.";
 
 export const metadata: Metadata = {
-  // TODO: update once the production domain is finalized (phasq.tech vs. current *.vercel.app)
-  metadataBase: new URL("https://phasq.tech"),
+  metadataBase: new URL("https://phasq.com"),
   title: {
     default: TITLE,
     template: "%s — PhasQ",

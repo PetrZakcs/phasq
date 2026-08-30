@@ -16,7 +16,7 @@ async function testConnection() {
     console.log('Testing Supabase connection...');
     console.log(`URL: ${supabaseUrl}`);
 
-    const testEmail = `test_${Date.now()}@phasq.tech`;
+    const testEmail = `test_${Date.now()}@phasq.com`;
 
     const { data, error } = await supabase
         .from('waitlist')
