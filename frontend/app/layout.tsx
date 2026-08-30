@@ -2,7 +2,6 @@ import { Big_Shoulders, Public_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import ScrollGauge from "@/components/ScrollGauge";
-import ScrollTint from "@/components/ScrollTint";
 import PageTransition from "@/components/PageTransition";
 
 // Display face — condensed, industrial. Used for headlines only.
@@ -62,7 +61,6 @@ export default function RootLayout({
         className={`${bigShoulders.variable} ${publicSans.variable} ${plexMono.variable} antialiased`}
       >
         <ScrollGauge />
-        <ScrollTint />
         <PageTransition>{children}</PageTransition>
         <Analytics />
       </body>

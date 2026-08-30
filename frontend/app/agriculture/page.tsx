@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function AgriculturePage() {
     return (
-        <main className="bg-ground text-ink selection:bg-accent/30">
+        <main data-sector="agriculture" className="bg-ground text-ink selection:bg-accent/30">
             <Navbar />
 
             <SectorHero

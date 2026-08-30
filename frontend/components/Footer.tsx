@@ -86,7 +86,7 @@ export default function Footer() {
 
                 <div className="pt-10 border-t border-line flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="font-data text-[10px] text-ink-faint tracking-[0.3em] uppercase">
-                        Sentinel-1 · Sentinel-2 · Google Earth Engine
+                        Sentinel-1 · Sentinel-2 · Copernicus Data Space
                     </div>
                 </div>
             </div>

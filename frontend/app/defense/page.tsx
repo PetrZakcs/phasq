@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function DefensePage() {
     return (
-        <main className="bg-ground text-ink selection:bg-accent/30">
+        <main data-sector="defense" className="bg-ground text-ink selection:bg-accent/30">
             <Navbar />
 
             <SectorHero

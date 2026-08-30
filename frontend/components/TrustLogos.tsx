@@ -8,8 +8,7 @@ export default function TrustLogos() {
     const stack = [
         { name: 'Sentinel-1', label: 'C-BAND SAR' },
         { name: 'Sentinel-2', label: 'OPTICAL REFERENCE' },
-        { name: 'Copernicus Data Space', label: 'DATA ACCESS' },
-        { name: 'Google Earth Engine', label: 'COMPUTE' },
+        { name: 'Copernicus Data Space', label: 'DATA & PROCESSING' },
     ];
 
     return (

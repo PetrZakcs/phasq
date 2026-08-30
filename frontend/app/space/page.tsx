@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function SpacePage() {
     return (
-        <main className="bg-ground text-ink selection:bg-accent/30">
+        <main data-sector="space" className="bg-ground text-ink selection:bg-accent/30">
             <Navbar />
 
             <SectorHero

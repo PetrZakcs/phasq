@@ -54,7 +54,7 @@ export default async function Image() {
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div style={{ display: 'flex', fontSize: 34, fontWeight: 800, color: '#f1eee2' }}>
-                            PHASQ<span style={{ color: '#c1602c' }}>.tech</span>
+                            PHASQ<span style={{ color: '#c1602c' }}>.com</span>
                         </div>
                         <div style={{ display: 'flex', fontSize: 22, color: '#a6a38c' }}>
                             Physics-based SAR intelligence

@@ -63,6 +63,28 @@
   }
 }
 
+/*
+  Per-sector accent — same instrument scale, different point on it as the
+  page's brand color. The legend-strip itself (the actual classification
+  reading) never changes; only which of its five stops a given audience's
+  CTA/highlight color is drawn from. Scoped to <main data-sector="...">,
+  inherited by every component underneath without touching them.
+*/
+[data-sector="agriculture"] {
+  --color-accent: var(--color-wet);
+  --color-accent-strong: var(--color-normal);
+}
+
+[data-sector="defense"] {
+  --color-accent: var(--color-verydry);
+  --color-accent-strong: var(--color-extreme);
+}
+
+[data-sector="space"] {
+  --color-accent: var(--color-data);
+  --color-accent-strong: #4f8494;
+}
+
 @theme inline {
   --radius-sm: 0;
   --radius-md: 0;
