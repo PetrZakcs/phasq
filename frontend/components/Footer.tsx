@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Mail, Linkedin, Instagram } from 'lucide-react';
 
-const INSTAGRAM_URL = "https://www.instagram.com/phasq1/";
+const INSTAGRAM_URL = "https://www.instagram.com/phasqcom/";
 const LINKEDIN_URL = "https://www.linkedin.com/company/phasq1";
 const CALENDLY_URL = "https://calendly.com/petr-phasq/30min";
 
