@@ -1,5 +1,4 @@
-'use client';
-
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import SectorHero from "@/components/SectorHero";
 import CapabilityList from "@/components/CapabilityList";
@@ -7,6 +6,11 @@ import ContactCTA from "@/components/ContactCTA";
 import Footer from "@/components/Footer";
 
 const CALENDLY_URL = "https://calendly.com/petr-phasq/30min";
+
+export const metadata: Metadata = {
+    title: "Space Operations",
+    description: "Ground station calibration, atmospheric path-delay, and surface deformation monitoring — our earliest, least developed vertical, stated plainly as a research interest, not a shipped product.",
+};
 
 export default function SpacePage() {
     return (

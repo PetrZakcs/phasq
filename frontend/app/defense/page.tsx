@@ -1,5 +1,4 @@
-'use client';
-
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import SectorHero from "@/components/SectorHero";
 import CapabilityList from "@/components/CapabilityList";
@@ -10,6 +9,11 @@ import ContactCTA from "@/components/ContactCTA";
 import Footer from "@/components/Footer";
 
 const CALENDLY_URL = "https://calendly.com/petr-phasq/30min";
+
+export const metadata: Metadata = {
+    title: "Defense & Government",
+    description: "All-weather, day-or-night SAR monitoring — change detection, sub-meter displacement, and through-cover detection from the same physics engine, no case study dressed up as more than it is.",
+};
 
 export default function DefensePage() {
     return (

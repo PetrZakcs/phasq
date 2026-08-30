@@ -1,5 +1,4 @@
-'use client';
-
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import SectorHero from "@/components/SectorHero";
 import TruthSlider from "@/components/TruthSlider";
@@ -11,6 +10,11 @@ import Waitlist from "@/components/Waitlist";
 import Footer from "@/components/Footer";
 
 const CALENDLY_URL = "https://calendly.com/petr-phasq/30min";
+
+export const metadata: Metadata = {
+    title: "Agriculture",
+    description: "Root-zone soil moisture from Sentinel-1 radar backscatter — drought detection 14 days before it's visible, verified against a real, reproducible analysis run.",
+};
 
 export default function AgriculturePage() {
     return (

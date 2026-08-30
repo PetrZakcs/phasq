@@ -1,6 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+    title: "Page not found",
+    description: "The page you're looking for doesn't exist, or the coordinates changed.",
+};
 
 export default function NotFound() {
     return (

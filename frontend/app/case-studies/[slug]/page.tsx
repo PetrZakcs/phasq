@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { CASES, getCase } from '@/lib/cases';
@@ -10,6 +11,16 @@ import VerifyTerminal from '@/components/VerifyTerminal';
 
 export function generateStaticParams() {
     return CASES.map((c) => ({ slug: c.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const item = getCase(slug);
+    if (!item) return { title: 'Case study' };
+    return {
+        title: item.title,
+        description: item.dek,
+    };
 }
 
 export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
