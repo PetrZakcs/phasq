@@ -16,7 +16,7 @@ interface CapabilityListProps {
 
 export default function CapabilityList({ eyebrow, heading, intro, items }: CapabilityListProps) {
     return (
-        <section className="py-24 md:py-32 bg-ground border-t border-line">
+        <section className="py-20 md:py-28 bg-ground border-t border-line">
             <div className="max-w-[1400px] mx-auto px-6 md:px-10">
                 <div className="section-label">{eyebrow}</div>
 

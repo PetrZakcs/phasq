@@ -45,7 +45,7 @@ export default function SectorHero({
     return (
         <section
             ref={sectionRef}
-            className="relative min-h-[85svh] w-full flex flex-col justify-end bg-ground overflow-hidden py-24 md:py-32"
+            className="relative min-h-[85svh] w-full flex flex-col justify-end bg-ground overflow-hidden py-20 md:py-28"
         >
             <motion.div className="absolute inset-0" style={{ y: videoY }}>
                 <BgVideo
@@ -76,7 +76,7 @@ export default function SectorHero({
                     initial={{ opacity: 0, y: 28 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.1 }}
-                    className="heading-xl text-[3rem] sm:text-[4.5rem] md:text-[6rem] text-ink mb-8 max-w-[20ch]"
+                    className="heading-xl text-[2.6rem] sm:text-[3.8rem] md:text-[5rem] text-ink mb-8 max-w-[20ch]"
                 >
                     {title}
                 </motion.h1>

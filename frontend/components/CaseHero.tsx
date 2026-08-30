@@ -24,7 +24,7 @@ export default function CaseHero({ item }: { item: CaseStudy }) {
                     initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.08 }}
-                    className="heading-xl text-[2.6rem] sm:text-[3.6rem] md:text-[5rem] text-ink mb-6 max-w-[20ch]"
+                    className="heading-xl text-[2.2rem] sm:text-[3rem] md:text-[4.2rem] text-ink mb-6 max-w-[20ch]"
                 >
                     {item.title}
                 </motion.h1>

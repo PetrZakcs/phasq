@@ -62,7 +62,7 @@ export default function PipelineReveal() {
                                 style={{ opacity: labelOpacities[i] }}
                             >
                                 <span className="font-data text-[13px] text-accent shrink-0">{s.tag}</span>
-                                <h3 className="heading-md text-[1.5rem] md:text-[2.2rem] text-ink">{s.label}</h3>
+                                <h3 className="heading-md text-[1.3rem] md:text-[1.9rem] text-ink">{s.label}</h3>
                                 <span className="font-data text-[10px] tracking-widest uppercase text-ink-faint hidden md:inline">
                                     {s.sub}
                                 </span>

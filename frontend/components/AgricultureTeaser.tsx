@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 /** Homepage-only: honest early-access framing, no theater. */
 export default function AgricultureTeaser() {
     return (
-        <section className="py-24 md:py-32 bg-surface border-t border-line">
+        <section className="py-20 md:py-28 bg-surface border-t border-line">
             <div className="max-w-[1400px] mx-auto px-6 md:px-10">
                 <div className="section-label">Early access — open now</div>
 

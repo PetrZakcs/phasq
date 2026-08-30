@@ -15,7 +15,7 @@ export default function NotFound() {
             <section className="flex-1 flex items-center py-32">
                 <div className="max-w-[1400px] mx-auto px-6 md:px-10 w-full">
                     <div className="section-label">404 — no return detected</div>
-                    <h1 className="heading-xl text-[3rem] sm:text-[4.5rem] md:text-[6rem] text-ink mb-6 max-w-[16ch]">
+                    <h1 className="heading-xl text-[2.6rem] sm:text-[3.8rem] md:text-[5rem] text-ink mb-6 max-w-[16ch]">
                         Nothing came back<br />on this pass.
                     </h1>
                     <p className="text-ink-soft text-base md:text-lg leading-relaxed max-w-[52ch] mb-10">

@@ -37,7 +37,7 @@ const SECTORS = [
 
 export default function Features() {
     return (
-        <section id="technology" className="py-24 md:py-32 bg-ground border-t border-line">
+        <section id="technology" className="py-20 md:py-28 bg-ground border-t border-line">
             <div className="max-w-[1400px] mx-auto px-6 md:px-10">
                 <div className="section-label">Applications</div>
 

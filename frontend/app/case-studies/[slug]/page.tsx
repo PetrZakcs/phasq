@@ -34,7 +34,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             <CaseHero item={item} />
 
             {/* The honest part — why this exists at all */}
-            <section className="py-24 md:py-32 bg-surface border-t border-line">
+            <section className="py-20 md:py-28 bg-surface border-t border-line">
                 <div className="max-w-[900px] mx-auto px-6 md:px-10">
                     <div className="section-label">Why we&apos;re showing you this</div>
                     <h2 className="heading-md text-ink mb-8">
@@ -70,7 +70,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             />
 
             {/* Reproduce it yourself */}
-            <section className="py-24 md:py-32 bg-ground border-t border-line">
+            <section className="py-20 md:py-28 bg-ground border-t border-line">
                 <div className="max-w-[1400px] mx-auto px-6 md:px-10">
                     <div className="section-label">Reproduce this yourself</div>
                     <div className="grid grid-cols-1 md:grid-cols-[1fr_1.1fr] gap-12 md:gap-20">

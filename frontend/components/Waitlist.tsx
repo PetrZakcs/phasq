@@ -4,7 +4,7 @@ import WaitlistForm from './WaitlistForm';
 
 export default function Waitlist() {
     return (
-        <section id="waitlist" className="py-24 md:py-32 bg-surface border-t border-line">
+        <section id="waitlist" className="py-20 md:py-28 bg-surface border-t border-line">
             <div className="max-w-[1400px] mx-auto px-6 md:px-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 items-center">
                     <div className="flex flex-col">

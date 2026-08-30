@@ -46,11 +46,14 @@ export default function DefensePage() {
                 ]}
             />
 
-            <Coverage />
+            <Coverage
+                eyebrow="The surveillance gap"
+                body="That's the long-term average share of Earth under cloud at any given moment — 66.7%, per four decades of satellite cloud climatology. For persistent monitoring, that's not a statistic — it's a window an adversary can plan around. C-band radar doesn't care which third of the sky happens to be clear."
+            />
             <ProcessSteps />
 
             {/* Credibility anchor: real physics, not a fabricated case study */}
-            <section id="physics" className="py-24 md:py-32 bg-surface border-t border-line">
+            <section id="physics" className="py-20 md:py-28 bg-surface border-t border-line">
                 <div className="max-w-[1400px] mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-12 md:gap-20">
                     <div>
                         <div className="section-label">Why this holds up</div>

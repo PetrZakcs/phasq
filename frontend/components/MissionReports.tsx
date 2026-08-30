@@ -22,7 +22,7 @@ export default function MissionReports() {
     };
 
     return (
-        <section id="missions" className="py-24 md:py-32 bg-surface border-t border-line">
+        <section id="missions" className="py-20 md:py-28 bg-surface border-t border-line">
             <div className="max-w-[1400px] mx-auto px-6 md:px-10">
                 <div className="section-label">Verified analysis</div>
 

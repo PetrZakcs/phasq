@@ -3,25 +3,33 @@
 import { motion } from 'framer-motion';
 import CountUp from './CountUp';
 
-export default function Coverage() {
+interface CoverageProps {
+    eyebrow?: string;
+    body?: string;
+}
+
+const DEFAULT_BODY =
+    "That's the long-term average share of Earth covered by cloud at any given moment — 66.7%, " +
+    "precisely, per four decades of satellite cloud climatology. Every optical satellite image " +
+    "you've ever looked at was taken through the roughly one-third of sky that happened to be " +
+    "clear. C-band radar doesn't care which third that is.";
+
+export default function Coverage({ eyebrow = 'The blind spot', body = DEFAULT_BODY }: CoverageProps) {
     return (
-        <section className="relative py-28 md:py-40 border-t border-line overflow-hidden">
+        <section className="relative py-24 md:py-32 border-t border-line overflow-hidden">
             <div
                 className="absolute inset-0 bg-[url('/radar.png')] bg-center bg-cover opacity-[0.12] grayscale contrast-125"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-ground via-ground/95 to-ground" />
 
             <div className="relative max-w-[1400px] mx-auto px-6 md:px-10">
-                <div className="section-label">The blind spot</div>
+                <div className="section-label">{eyebrow}</div>
 
-                <h2 className="heading-xl text-[3.4rem] sm:text-[4.5rem] md:text-[6rem] text-ink mb-6">
+                <h2 className="heading-xl text-[3rem] sm:text-[4rem] md:text-[5.2rem] text-ink mb-6">
                     <CountUp value={67} prefix="~" suffix="%" duration={1.4} />
                 </h2>
                 <p className="text-ink-soft text-base md:text-lg leading-relaxed max-w-[56ch] mb-4">
-                    That&apos;s the long-term average share of Earth covered by cloud at any given moment —
-                    66.7%, precisely, per four decades of satellite cloud climatology. Every optical satellite
-                    image you&apos;ve ever looked at was taken through the roughly one-third of sky that
-                    happened to be clear. C-band radar doesn&apos;t care which third that is.
+                    {body}
                 </p>
                 <p className="font-data text-[11px] text-ink-faint tracking-wide mb-16">
                     Sources:{' '}

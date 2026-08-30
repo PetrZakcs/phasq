@@ -27,7 +27,7 @@ export default function Home() {
       <TrustLogos />
 
       {/* Comparison Section — the one moment on this site that proves itself */}
-      <section id="demo" className="py-24 md:py-32 bg-ground border-t border-line overflow-hidden">
+      <section id="demo" className="py-20 md:py-28 bg-ground border-t border-line overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 mb-16">
           <div className="section-label">Same field, same day</div>
           <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-10">

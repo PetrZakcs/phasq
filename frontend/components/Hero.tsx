@@ -15,7 +15,7 @@ export default function Hero() {
     return (
         <section
             ref={sectionRef}
-            className="relative min-h-[100svh] w-full flex flex-col justify-end bg-ground overflow-hidden py-24 md:py-32 lg:py-40"
+            className="relative min-h-[100svh] w-full flex flex-col justify-end bg-ground overflow-hidden py-20 md:py-28 lg:py-36"
         >
             {/* Full-bleed background — real aerial farmland footage, muted for legibility.
                 Moves slightly slower than the content on scroll (parallax). */}

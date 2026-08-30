@@ -166,7 +166,7 @@ body::after {
 
 .heading-xl {
   font-family: var(--font-display), ui-sans-serif, sans-serif;
-  font-size: clamp(3rem, 8vw, 8.5rem);
+  font-size: clamp(2.6rem, 6.6vw, 7rem);
   font-weight: 800;
   line-height: 0.94;
   letter-spacing: -0.01em;
@@ -175,7 +175,7 @@ body::after {
 
 .heading-lg {
   font-family: var(--font-display), ui-sans-serif, sans-serif;
-  font-size: clamp(2.2rem, 5vw, 4.6rem);
+  font-size: clamp(2rem, 4.2vw, 3.8rem);
   font-weight: 800;
   line-height: 0.98;
   letter-spacing: -0.005em;
@@ -185,7 +185,7 @@ body::after {
 /* Secondary heading — a title next to body text, not a full section banner. */
 .heading-md {
   font-family: var(--font-display), ui-sans-serif, sans-serif;
-  font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
   font-weight: 800;
   line-height: 1.02;
   letter-spacing: -0.005em;
@@ -195,7 +195,7 @@ body::after {
 /* Card-level heading — inside a bordered panel, not a section title. */
 .heading-sm {
   font-family: var(--font-display), ui-sans-serif, sans-serif;
-  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  font-size: clamp(1.3rem, 1.9vw, 1.8rem);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.005em;
