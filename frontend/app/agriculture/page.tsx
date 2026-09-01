@@ -26,7 +26,7 @@ export default function AgriculturePage() {
                 eyebrow="Agriculture · Sentinel-1 SAR"
                 title={<>Detect drought before the harvest forecast does.</>}
                 subtitle="Root-zone soil moisture from radar backscatter — not a satellite photo of a plant that already turned brown. Weekly updates, any weather, any hour."
-                primaryCta={{ label: 'Join the pilot list ↗', href: '#waitlist' }}
+                primaryCta={{ label: 'Book a pilot call ↗', href: '#waitlist' }}
                 secondaryCta={{ label: 'Book a demo', href: CALENDLY_URL, external: true }}
                 videoDesktop="/hero-farm-desktop.mp4"
                 videoMobile="/hero-farm-mobile.mp4"
