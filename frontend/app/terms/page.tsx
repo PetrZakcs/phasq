@@ -23,11 +23,10 @@ export default function TermsPage() {
             <section>
                 <h2>2. Who&apos;s behind this</h2>
                 <p>
-                    phasq.com is operated by{' '}
-                    <span className="fill-in">[your full legal name]</span>, currently operating as{' '}
-                    <span className="fill-in">[e.g. an OSVČ / sole trader with IČO XXXXXXXX, or: an
-                    individual, not yet registered as a business]</span>, based in{' '}
-                    <span className="fill-in">[city, country]</span>.
+                    phasq.com is operated by Petr Žák, trading as PhasQ — an independent project based in
+                    the Czech Republic, ahead of formal company registration.
+                    <span className="fill-in">[once a company is registered, this section should be updated
+                    with its legal name and registration number]</span>
                 </p>
             </section>
 
@@ -54,8 +53,7 @@ export default function TermsPage() {
             <section>
                 <h2>5. Intellectual property</h2>
                 <p>
-                    The text, design, and analysis write-ups on this site belong to{' '}
-                    <span className="fill-in">[your legal name from section 2]</span> unless stated
+                    The text, design, and analysis write-ups on this site belong to Petr Žák unless stated
                     otherwise. Satellite imagery referenced or shown on this site originates from the
                     European Space Agency&apos;s Copernicus Sentinel program and is used under its open
                     data terms.
@@ -84,9 +82,8 @@ export default function TermsPage() {
             <section>
                 <h2>8. Governing law</h2>
                 <p>
-                    These terms are governed by the laws of{' '}
-                    <span className="fill-in">[the Czech Republic — confirm this is where you want disputes
-                    handled]</span>, without regard to conflict-of-law principles.
+                    These terms are governed by the laws of the Czech Republic, without regard to
+                    conflict-of-law principles.
                 </p>
             </section>
 

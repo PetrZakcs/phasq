@@ -18,13 +18,12 @@ export default function PrivacyPage() {
             <section>
                 <h2>1. Who this is</h2>
                 <p>
-                    This site is operated by{' '}
-                    <span className="fill-in">[your full legal name]</span>, currently operating as{' '}
-                    <span className="fill-in">[e.g. an OSVČ / sole trader with IČO XXXXXXXX, or: an
-                    individual, not yet registered as a business]</span>, based in{' '}
-                    <span className="fill-in">[city, country]</span>. For the purposes of data protection
-                    law, that&apos;s the &quot;controller&quot; of the data described below. You can reach the
-                    controller directly at <a href="mailto:petr@phasq.com">petr@phasq.com</a>.
+                    This site is operated by Petr Žák, trading as PhasQ — an independent project based in
+                    the Czech Republic, ahead of formal company registration. For the purposes of data
+                    protection law, that&apos;s the &quot;controller&quot; of the data described below. You
+                    can reach the controller directly at <a href="mailto:petr@phasq.com">petr@phasq.com</a>.
+                    <span className="fill-in">[once a company is registered, this section should be updated
+                    with its legal name and registration number]</span>
                 </p>
             </section>
 
@@ -56,11 +55,9 @@ export default function PrivacyPage() {
             <section>
                 <h2>4. Where it&apos;s stored</h2>
                 <p>
-                    Waitlist submissions are stored with Supabase, our database provider, hosted in{' '}
-                    <span className="fill-in">[the region your Supabase project is set to — e.g. &quot;the
-                    EU (Frankfurt)&quot; or &quot;the United States&quot;]</span>. We don&apos;t share this
-                    data with any other third party. If your data ever leaves the EU/EEA, it&apos;s protected
-                    under Supabase&apos;s standard contractual clauses.
+                    Waitlist submissions are stored with Supabase, our database provider, hosted in the
+                    EU (Frankfurt, Germany). We don&apos;t share this data with any other third party, and
+                    it doesn&apos;t leave the EU/EEA.
                 </p>
             </section>
 
