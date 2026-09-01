@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { Mail, Linkedin, Instagram } from 'lucide-react';
 
 const INSTAGRAM_URL = "https://www.instagram.com/phasqcom/";
@@ -87,6 +88,14 @@ export default function Footer() {
                 <div className="pt-10 border-t border-line flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="font-data text-[10px] text-ink-faint tracking-[0.3em] uppercase">
                         Sentinel-1 · Sentinel-2 · Copernicus Data Space
+                    </div>
+                    <div className="flex gap-6">
+                        <Link href="/privacy" className="text-[12px] text-ink-faint hover:text-ink-soft transition-colors">
+                            Privacy
+                        </Link>
+                        <Link href="/terms" className="text-[12px] text-ink-faint hover:text-ink-soft transition-colors">
+                            Terms
+                        </Link>
                     </div>
                 </div>
             </div>

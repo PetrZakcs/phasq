@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { createClient } from '@supabase/supabase-js';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Loader2, CheckCircle, AlertCircle, ChevronDown } from 'lucide-react';
@@ -145,6 +146,14 @@ export default function WaitlistForm() {
                                     'Join the waitlist'
                                 )}
                             </button>
+
+                            <p className="text-ink-faint text-[12px] text-center leading-relaxed">
+                                By submitting, you agree to our{' '}
+                                <Link href="/privacy" className="underline hover:text-ink-soft transition-colors">
+                                    Privacy Policy
+                                </Link>
+                                . We&apos;ll only use your email to contact you about early access.
+                            </p>
 
                             {status === 'error' && (
                                 <motion.p

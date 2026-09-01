@@ -11,6 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: path === '' ? 1 : 0.8,
     }));
 
+    const legalRoutes = ['/privacy', '/terms'].map((path) => ({
+        url: `${BASE_URL}${path}`,
+        lastModified: new Date(),
+        changeFrequency: 'yearly' as const,
+        priority: 0.2,
+    }));
+
     const caseRoutes = CASES.map((c) => ({
         url: `${BASE_URL}/case-studies/${c.slug}`,
         lastModified: new Date(),
@@ -18,5 +25,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.6,
     }));
 
-    return [...staticRoutes, ...caseRoutes];
+    return [...staticRoutes, ...legalRoutes, ...caseRoutes];
 }

@@ -319,6 +319,62 @@ body::after {
   border-color: var(--color-line-strong);
 }
 
+/* ===== Legal document typography ===== */
+.legal-copy h2 {
+  font-family: var(--font-display), ui-sans-serif, sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: -0.005em;
+  color: var(--color-ink);
+  margin-bottom: 0.75rem;
+}
+
+.legal-copy p, .legal-copy li {
+  color: var(--color-ink-soft);
+}
+
+.legal-copy ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.legal-copy li {
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.legal-copy li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-ink-faint);
+}
+
+.legal-copy a {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--color-line-strong);
+  text-underline-offset: 2px;
+}
+
+.legal-copy a:hover {
+  text-decoration-color: var(--color-accent);
+}
+
+.legal-copy strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.legal-copy .fill-in {
+  background: var(--color-accent-strong);
+  color: var(--color-ink);
+  padding: 0.05em 0.4em;
+}
+
 /* Slow idle scale for ambient background imagery — never sharp enough to
    distract, just enough that a static photo doesn't read as a screenshot. */
 .ambient-zoom {
