@@ -28,7 +28,7 @@ export default async function Image() {
                             marginBottom: 28,
                         }}
                     >
-                        Radar phase intelligence
+                        Radar backscatter intelligence
                     </div>
                     <div
                         style={{

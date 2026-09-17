@@ -12,7 +12,7 @@ const CALENDLY_URL = "https://calendly.com/petr-phasq/30min";
 
 export const metadata: Metadata = {
     title: "Defense & Government",
-    description: "All-weather, day-or-night SAR monitoring — change detection, sub-meter displacement, and through-cover detection from the same physics engine, no case study dressed up as more than it is.",
+    description: "All-weather, day-or-night SAR monitoring — change detection, structural anomaly flags, and through-cover detection from the same physics engine, no case study dressed up as more than it is.",
 };
 
 export default function DefensePage() {
@@ -24,7 +24,7 @@ export default function DefensePage() {
                 tag="DEF"
                 eyebrow="Defense & Government · All-weather SAR"
                 title={<>Persistent visibility, day or night, rain or shine.</>}
-                subtitle="C-band radar penetrates cloud cover, smoke, and full darkness. Detect vehicle displacement, infrastructure change, and subsurface anomalies — through concealment optical sensors can't see past."
+                subtitle="C-band radar penetrates cloud cover, smoke, and full darkness. Detect infrastructure change, large-scale activity, and structural anomalies — through concealment optical sensors can't see past."
                 primaryCta={{ label: 'Book a demo ↗', href: CALENDLY_URL, external: true }}
                 secondaryCta={{ label: 'See the physics', href: '#physics' }}
                 videoDesktop="/hero-defense-desktop.mp4"
@@ -37,10 +37,10 @@ export default function DefensePage() {
             <CapabilityList
                 eyebrow="What it does"
                 heading={<>Built for persistent<br />monitoring.</>}
-                intro="A single physics engine applied to change detection, displacement, and concealment — the same radar backscatter analysis as our agriculture product, tuned for a different tempo."
+                intro="A single physics engine applied to change detection, structural anomalies, and concealment — the same radar backscatter analysis as our agriculture product, tuned for a different tempo."
                 items={[
                     { title: 'Change detection (24h)', desc: 'Compare successive Sentinel-1 passes to flag new activity at a site of interest within a day.' },
-                    { title: 'Sub-meter displacement', desc: 'InSAR-based coherence and phase analysis for structural or ground movement, not just optical shadows.' },
+                    { title: 'Structural change detection', desc: 'Amplitude-based comparison flags new construction, damage, or large ground disturbance across passes — accurate at Sentinel-1\'s ~10 m resolution, not individual-vehicle tracking.' },
                     { title: 'Through-cover detection', desc: 'Metal surfaces produce a near-perfect corner-reflection return — a signature that lightweight foliage and camouflage netting can\'t mask.' },
                     { title: 'Dark vessel detection', desc: 'Maritime SAR scans flag radar returns with no matching AIS transponder signal.' },
                 ]}

@@ -8,12 +8,12 @@ const FAQS: { q: string; a: string; icon: LucideIcon }[] = [
     {
         icon: Radar,
         q: 'How does PhasQ differ from NDVI optical imagery?',
-        a: 'NDVI is a lagging indicator — it only reveals stress after chlorophyll loss occurs visibly. PhasQ uses C-band SAR to measure dielectric constant changes in the root zone, detecting water stress 14 days before any visual signals appear. The difference is prevention vs. reaction.',
+        a: 'NDVI is a lagging indicator — it only reveals stress after chlorophyll loss occurs visibly. PhasQ uses C-band SAR to measure dielectric constant changes in the surface soil layer, detecting water stress 14 days before any visual signals appear. The difference is prevention vs. reaction.',
     },
     {
         icon: Atom,
         q: 'What makes the physics-based approach unique?',
-        a: 'Competitors apply pattern-matching ML to optical images. We solve the radar equation — modeling backscatter physics (σ⁰) to derive soil moisture and structural properties from first principles. Results are grounded in electromagnetics, not learned correlations.',
+        a: 'Competitors apply pattern-matching ML to optical images. We model backscatter physics (σ⁰) — separating surface roughness and vegetation scattering from the dielectric signal — to derive soil moisture and structural properties. It’s a physical inversion model, not a black-box correlation.',
     },
     {
         icon: ScanEye,

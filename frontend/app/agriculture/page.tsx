@@ -13,7 +13,7 @@ const CALENDLY_URL = "https://calendly.com/petr-phasq/30min";
 
 export const metadata: Metadata = {
     title: "Agriculture",
-    description: "Root-zone soil moisture from Sentinel-1 radar backscatter — drought detection 14 days before it's visible, verified against a real, reproducible analysis run.",
+    description: "Surface soil moisture from Sentinel-1 radar backscatter — drought detection 14 days before it's visible, verified against a real, reproducible analysis run.",
 };
 
 export default function AgriculturePage() {
@@ -25,7 +25,7 @@ export default function AgriculturePage() {
                 tag="AGR"
                 eyebrow="Agriculture · Sentinel-1 SAR"
                 title={<>Detect drought before the harvest forecast does.</>}
-                subtitle="Root-zone soil moisture from radar backscatter — not a satellite photo of a plant that already turned brown. Weekly updates, any weather, any hour."
+                subtitle="Surface soil moisture from radar backscatter — not a satellite photo of a plant that already turned brown. Weekly updates, any weather, any hour."
                 primaryCta={{ label: 'Book a pilot call ↗', href: '#waitlist' }}
                 secondaryCta={{ label: 'Book a demo', href: CALENDLY_URL, external: true }}
                 videoDesktop="/hero-farm-desktop.mp4"
@@ -67,7 +67,7 @@ export default function AgriculturePage() {
                 heading={<>Built for the<br />growing season.</>}
                 intro="Four ways radar-derived moisture data plugs into decisions a farm or agronomy team already makes every week."
                 items={[
-                    { title: 'Root-zone moisture mapping', desc: 'Weekly dielectric-based soil moisture estimates per field, not a vegetation-color proxy.' },
+                    { title: 'Surface moisture mapping', desc: 'Weekly dielectric-based soil moisture estimates per field, not a vegetation-color proxy.' },
                     { title: 'Harvest timing models', desc: 'Track drydown trends to time harvest windows against real soil conditions, not the calendar.' },
                     { title: 'Yield loss prediction', desc: 'Flag developing drought stress two weeks before it shows up in scouting or optical NDVI.' },
                     { title: 'Variable-rate maps (VRA)', desc: 'Export-ready moisture zones for variable-rate irrigation and input planning.' },

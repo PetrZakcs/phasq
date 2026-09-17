@@ -12,7 +12,7 @@ const steps = [
     {
         num: '02',
         title: 'Signal processing',
-        desc: 'Physics-based pipeline converts raw SAR backscatter (σ⁰ dB) into moisture maps, subsidence fields, and structural health indices.',
+        desc: 'Physics-based pipeline converts raw SAR backscatter (σ⁰ dB) into moisture maps, change-detection layers, and surface anomaly flags.',
         tag: 'Processing',
     },
     {

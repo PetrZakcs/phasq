@@ -46,9 +46,9 @@ export const CASES: CaseStudy[] = [
         meanDb: -11.8,
         stats: [
             { label: 'Mean σ⁰ (VV)', value: '−11.80 dB', numeric: { value: -11.8, decimals: 2, suffix: ' dB' } },
-            { label: 'Range', value: '−45.3 to +25.8 dB' },
+            { label: 'Scene min/max (full AOI)', value: '−45.3 to +25.8 dB' },
             { label: 'Classification', value: 'Mild drought' },
-            { label: 'Soil moisture index', value: '62%', numeric: { value: 62, suffix: '%' } },
+            { label: 'Moisture trend', value: 'Below seasonal baseline' },
         ],
         verify: {
             product: 'Sentinel-1 GRD',

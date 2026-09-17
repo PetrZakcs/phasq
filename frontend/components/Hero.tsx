@@ -40,7 +40,7 @@ export default function Hero() {
                     transition={{ duration: 0.6 }}
                     className="mb-7 flex items-center gap-3"
                 >
-                    <span className="eyebrow">Radar phase intelligence</span>
+                    <span className="eyebrow">Radar backscatter intelligence</span>
                     <span className="w-8 h-px bg-line-strong" />
                     <span className="eyebrow text-ink-faint">Sentinel-1 C-band SAR</span>
                 </motion.div>

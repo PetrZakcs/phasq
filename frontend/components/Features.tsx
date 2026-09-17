@@ -8,15 +8,15 @@ const SECTORS = [
     {
         id: 'AGR',
         title: 'Agriculture',
-        desc: 'Detect root-zone drought stress 14 days before optical visibility. Drive variable-rate irrigation and harvest decisions with physics — not guesswork.',
-        metrics: ['Root-zone moisture mapping', 'Harvest timing models', 'Yield loss prediction'],
+        desc: 'Detect surface soil-moisture drought stress 14 days before optical visibility. Drive variable-rate irrigation and harvest decisions with physics — not guesswork.',
+        metrics: ['Surface moisture mapping', 'Harvest timing models', 'Yield loss prediction'],
         href: '/agriculture',
     },
     {
         id: 'DEF',
         title: 'Defense',
-        desc: 'All-weather persistent surveillance. Detect vehicle displacement, infrastructure changes, and subsurface anomalies through cloud cover and concealment.',
-        metrics: ['Change detection (24h)', 'Sub-meter displacement', 'Through-cover detection'],
+        desc: 'All-weather persistent surveillance. Detect infrastructure change, large-scale activity, and structural anomalies through cloud cover and concealment.',
+        metrics: ['Change detection (24h)', 'Structural change detection', 'Through-cover detection'],
         href: '/defense',
     },
     {
