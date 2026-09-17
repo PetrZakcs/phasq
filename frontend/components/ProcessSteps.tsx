@@ -2,28 +2,32 @@
 
 import { motion } from 'framer-motion';
 
-const steps = [
-    {
-        num: '01',
-        title: 'Define area of interest',
-        desc: 'Select your coordinates. We continuously stream calibrated Sentinel-1 GRD data for your exact location — no hardware needed.',
-        tag: 'Input',
-    },
-    {
-        num: '02',
-        title: 'Signal processing',
-        desc: 'Physics-based pipeline converts raw SAR backscatter (σ⁰ dB) into moisture maps, change-detection layers, and surface anomaly flags.',
-        tag: 'Processing',
-    },
-    {
-        num: '03',
-        title: 'Intelligence delivered',
-        desc: 'Reports, GeoTIFFs, and vector masks — ready for decision-making, not interpretation. Delivered weekly or on-demand.',
-        tag: 'Output',
-    },
-];
+interface ProcessStepsProps {
+    processingDesc?: string;
+}
 
-export default function ProcessSteps() {
+export default function ProcessSteps({ processingDesc }: ProcessStepsProps) {
+    const steps = [
+        {
+            num: '01',
+            title: 'Define area of interest',
+            desc: 'Select your coordinates. We continuously stream calibrated Sentinel-1 GRD data for your exact location — no hardware needed.',
+            tag: 'Input',
+        },
+        {
+            num: '02',
+            title: 'Signal processing',
+            desc: processingDesc ?? 'Physics-based pipeline converts raw SAR backscatter (σ⁰ dB) into moisture maps, change-detection layers, and surface anomaly flags.',
+            tag: 'Processing',
+        },
+        {
+            num: '03',
+            title: 'Intelligence delivered',
+            desc: 'Reports, GeoTIFFs, and vector masks — ready for decision-making, not interpretation. Delivered weekly or on-demand.',
+            tag: 'Output',
+        },
+    ];
+
     return (
         <section id="process" className="py-20 md:py-28 bg-ground border-t border-line">
             <div className="max-w-[1400px] mx-auto px-6 md:px-10">

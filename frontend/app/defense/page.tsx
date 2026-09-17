@@ -39,7 +39,7 @@ export default function DefensePage() {
                 heading={<>Built for persistent<br />monitoring.</>}
                 intro="A single physics engine applied to change detection, structural anomalies, and concealment — the same radar backscatter analysis as our agriculture product, tuned for a different tempo."
                 items={[
-                    { title: 'Change detection (24h)', desc: 'Compare successive Sentinel-1 passes to flag new activity at a site of interest within a day.' },
+                    { title: 'Post-pass change detection', desc: 'Compare successive Sentinel-1 passes to flag new activity at a site of interest within 24 hours of data acquisition.' },
                     { title: 'Structural change detection', desc: 'Amplitude-based comparison flags new construction, damage, or large ground disturbance across passes — accurate at Sentinel-1\'s ~10 m resolution, not individual-vehicle tracking.' },
                     { title: 'Through-cover detection', desc: 'Metal surfaces produce a near-perfect corner-reflection return — a signature that lightweight foliage and camouflage netting can\'t mask.' },
                     { title: 'Dark vessel detection', desc: 'Maritime SAR scans flag radar returns with no matching AIS transponder signal.' },
@@ -50,7 +50,7 @@ export default function DefensePage() {
                 eyebrow="The surveillance gap"
                 body="That's the long-term average share of Earth under cloud at any given moment — 66.7%, per four decades of satellite cloud climatology. For persistent monitoring, that's not a statistic — it's a window an adversary can plan around. C-band radar doesn't care which third of the sky happens to be clear."
             />
-            <ProcessSteps />
+            <ProcessSteps processingDesc="Physics-based pipeline converts raw SAR backscatter (σ⁰ dB) into change-detection layers, structural health indices, and surface anomaly flags." />
 
             {/* Credibility anchor: real physics, not a fabricated case study */}
             <section id="physics" className="py-20 md:py-28 bg-surface border-t border-line">

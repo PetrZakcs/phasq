@@ -16,7 +16,7 @@ const SECTORS = [
         id: 'DEF',
         title: 'Defense',
         desc: 'All-weather persistent surveillance. Detect infrastructure change, large-scale activity, and structural anomalies through cloud cover and concealment.',
-        metrics: ['Change detection (24h)', 'Structural change detection', 'Through-cover detection'],
+        metrics: ['Post-pass change detection', 'Structural change detection', 'Through-cover detection'],
         href: '/defense',
     },
     {
