@@ -22,8 +22,8 @@ const SECTORS = [
     {
         id: 'SPC',
         title: 'Space',
-        desc: 'Ground station calibration, atmospheric path-delay correction, and surface deformation monitoring for space operations and research programs.',
-        metrics: ['Calibration support', 'Atm. path delay', 'Surface deformation'],
+        desc: 'Ground station calibration, atmospheric path-delay correction, and infrastructure monitoring for space operations and research programs.',
+        metrics: ['Calibration support', 'Atm. path delay', 'Infrastructure monitoring'],
         href: '/space',
     },
     {
