@@ -33,8 +33,8 @@ export default function SpacePage() {
 
             <CapabilityList
                 eyebrow="Where the physics applies"
-                heading={<>Same engine,<br />pointed upward.</>}
-                intro="These build on SAR physics more broadly — several, like InSAR-based deformation, need phase-preserving SLC data, a different product from the GRD backscatter our agriculture and defense pipeline runs today."
+                heading={<>Building on<br />our core pipeline.</>}
+                intro="We're expanding our core SAR architecture from intensity-based backscatter (Agriculture, Defense) into phase-based interferometry — SLC data — to solve a different set of problems."
                 items={[
                     { title: 'Calibration support', desc: 'Ground-truth backscatter references for SAR sensor calibration and cross-mission validation.' },
                     { title: 'Atmospheric path delay', desc: 'Modeling ionospheric and tropospheric delay effects on radar and GNSS signal paths.' },
