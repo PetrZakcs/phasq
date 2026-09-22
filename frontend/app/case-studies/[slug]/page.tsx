@@ -57,6 +57,15 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                             it&apos;s because we think a number a skeptical buyer can independently check is
                             worth more than one they have to take on faith.
                         </p>
+                        <p>
+                            One thing worth being direct about: this is a hand-run analysis, not our
+                            production pipeline. Pulling and calibrating the raw Sentinel-1 scenes is the
+                            solid part — that scales. The interpretation above it, turning σ⁰ into a label
+                            like &quot;mild drought,&quot; is still a first-pass model we&apos;re actively
+                            validating, not the finished inversion we&apos;re building toward. We&apos;d
+                            rather say that plainly than have you find it out from someone who checked our
+                            numbers before we told you.
+                        </p>
                     </div>
                 </div>
             </section>
