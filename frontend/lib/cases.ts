@@ -48,7 +48,7 @@ export const CASES: CaseStudy[] = [
             { label: 'Mean σ⁰ (VV)', value: '−10.24 dB', numeric: { value: -10.24, decimals: 2, suffix: ' dB' } },
             { label: 'Local moisture index', value: '68.8%', numeric: { value: 68.8, decimals: 1, suffix: '%' } },
             { label: 'Classification', value: 'Mild drought' },
-            { label: 'AOI area match (vs LPIS)', value: '99.92%', numeric: { value: 99.92, decimals: 2, suffix: '%' } },
+            { label: '4-yr reference stability', value: '±0.20 dB' },
         ],
         verify: {
             product: 'Sentinel-1 GRD',

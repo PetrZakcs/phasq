@@ -48,11 +48,9 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                         </p>
                         <p>
                             Ours isn&apos;t going anywhere. The bounding box, the date range, and the product
-                            type below are the actual parameters we queried, over a real field registered in
-                            the Czech LPIS system. Paste them into the free Copernicus Browser yourself and
-                            you will pull the same 6 scenes we did — not similar ones, the same ones. The
-                            field boundary itself is public record, queryable with no login at
-                            gis.cenia.cz.
+                            type below are the actual parameters we queried, over a real agricultural field.
+                            Paste them into the free Copernicus Browser yourself and you will pull the same 6
+                            scenes we did — not similar ones, the same ones.
                         </p>
                         <p>
                             Here&apos;s why the number above isn&apos;t obvious. Run this field&apos;s
@@ -73,7 +71,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                         <p>
                             One thing worth being direct about: the local-calibration method above is
                             demonstrated, not yet generalized. It&apos;s been built and tested against a
-                            handful of real, LPIS-registered fields — this one included — not validated at
+                            handful of real fields — this one included — not validated at
                             scale across arbitrary soil types, crops, and terrain yet. We&apos;re confident in
                             what you see above because we can show our work end to end, down to a transport
                             bug we found and fixed during live testing. We&apos;re not yet claiming it holds
