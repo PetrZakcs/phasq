@@ -48,9 +48,22 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                         </p>
                         <p>
                             Ours isn&apos;t going anywhere. The bounding box, the date range, and the product
-                            type below are the actual parameters we queried. Paste them into the free
-                            Copernicus Browser yourself and you will pull the same 18 scenes we did — not
-                            similar ones, the same ones.
+                            type below are the actual parameters we queried, over a real field registered in
+                            the Czech LPIS system. Paste them into the free Copernicus Browser yourself and
+                            you will pull the same 6 scenes we did — not similar ones, the same ones. The
+                            field boundary itself is public record, queryable with no login at
+                            gis.cenia.cz.
+                        </p>
+                        <p>
+                            Here&apos;s why the number above isn&apos;t obvious. Run this field&apos;s
+                            measured backscatter (−10.24 dB) through a fixed, one-size-fits-all reference
+                            scale and it comes back 84% moisture, &quot;no risk.&quot; Run the same reading
+                            through this specific field&apos;s own dry/wet reference points — built from 188
+                            real scenes across its last year — and it comes back 68.8%, &quot;mild
+                            drought.&quot; Same satellite, same measurement, different verdict, because one
+                            model knows this field&apos;s history and the other doesn&apos;t. That comparison
+                            is the entire argument for local calibration, and we&apos;d rather show it than
+                            just assert it.
                         </p>
                         <p>
                             If that sounds like an odd thing to lead with instead of a slicker screenshot,
@@ -58,13 +71,14 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                             worth more than one they have to take on faith.
                         </p>
                         <p>
-                            One thing worth being direct about: this is a hand-run analysis, not our
-                            production pipeline. Pulling and calibrating the raw Sentinel-1 scenes is the
-                            solid part — that scales. The interpretation above it, turning σ⁰ into a label
-                            like &quot;mild drought,&quot; is still a first-pass model we&apos;re actively
-                            validating, not the finished inversion we&apos;re building toward. We&apos;d
-                            rather say that plainly than have you find it out from someone who checked our
-                            numbers before we told you.
+                            One thing worth being direct about: the local-calibration method above is
+                            demonstrated, not yet generalized. It&apos;s been built and tested against a
+                            handful of real, LPIS-registered fields — this one included — not validated at
+                            scale across arbitrary soil types, crops, and terrain yet. We&apos;re confident in
+                            what you see above because we can show our work end to end, down to a transport
+                            bug we found and fixed during live testing. We&apos;re not yet claiming it holds
+                            for every field, everywhere — that&apos;s the honest difference between a proven
+                            method and a finished product.
                         </p>
                     </div>
                 </div>

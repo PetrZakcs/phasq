@@ -28,7 +28,7 @@ const FAQS: { q: string; a: string; icon: LucideIcon }[] = [
     {
         icon: ShieldCheck,
         q: 'How is data kept secure?',
-        a: 'Area-of-interest coordinates and analysis outputs are encrypted end-to-end. We do not share data with third parties or train external models on your inputs. Defense and government clients can request air-gapped, on-premise deployment.',
+        a: 'Area-of-interest coordinates and analysis outputs are encrypted in transit and at rest. We do not share data with third parties or train external models on your inputs. Air-gapped, on-premise deployment for defense and government clients is on our roadmap, not available today — ask us directly about current security posture.',
     },
 ];
 
