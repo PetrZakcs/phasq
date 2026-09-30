@@ -16,7 +16,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "PhasQ — Radar Intelligence Platform",
-  description: "Radar-based soil moisture and drought analysis for agriculture. All-weather, day-or-night — verified against the public Sentinel-1 archive.",
+  description: "Physics-based Synthetic Aperture Radar analysis for agriculture, defense, and space. All-weather, day-or-night — verified against the public Sentinel-1 archive.",
 };
 
 export default function Home() {

@@ -25,7 +25,7 @@ export default function Waitlist() {
                         </h2>
                         <p className="text-ink-soft text-base md:text-lg leading-relaxed max-w-[480px]">
                             We&apos;re onboarding a small number of pilot users directly, one conversation
-                            at a time — agriculture operators get priority.
+                            at a time — agriculture, infrastructure, and defense operators get priority.
                         </p>
                     </motion.div>
 

@@ -6,7 +6,7 @@ const BENEFITS = [
     {
         num: '01',
         title: 'Physics-first',
-        desc: 'We analyze raw Sentinel-1 radar backscatter — not optical imagery. We isolate the dielectric constant from surface roughness and vegetation scattering, calibrated against each field’s own history, instead of a black-box correlation.',
+        desc: 'We analyze raw Sentinel-1 radar backscatter — not optical imagery. A physics-based inversion model isolates the dielectric constant from surface roughness and vegetation scattering, instead of a black-box correlation.',
     },
     {
         num: '02',
@@ -32,8 +32,8 @@ export default function Benefits() {
                     </h2>
                     <p className="text-ink-soft text-base md:text-lg leading-relaxed pt-2">
                         Optical NDVI indices are lagging indicators — they only show stress after visible
-                        damage occurs. SAR radar detects surface moisture changes earlier, before the
-                        crop shows it. The difference between reacting and preventing.
+                        damage occurs. SAR radar detects surface moisture changes two weeks earlier.
+                        The difference between reacting and preventing.
                     </p>
                 </div>
 

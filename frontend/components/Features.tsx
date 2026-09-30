@@ -8,9 +8,30 @@ const SECTORS = [
     {
         id: 'AGR',
         title: 'Agriculture',
-        desc: 'Detect surface soil-moisture drought stress before it\'s visible to the eye. Drive variable-rate irrigation and harvest decisions with physics — not guesswork.',
+        desc: 'Detect surface soil-moisture drought stress 14 days before optical visibility. Drive variable-rate irrigation and harvest decisions with physics — not guesswork.',
         metrics: ['Surface moisture mapping', 'Harvest timing models', 'Yield loss prediction'],
         href: '/agriculture',
+    },
+    {
+        id: 'DEF',
+        title: 'Defense',
+        desc: 'All-weather persistent surveillance. Detect infrastructure change, large-scale activity, and structural anomalies through cloud cover and concealment.',
+        metrics: ['Post-pass change detection', 'Structural change detection', 'Through-cover detection'],
+        href: '/defense',
+    },
+    {
+        id: 'SPC',
+        title: 'Space',
+        desc: 'Ground station calibration, atmospheric path-delay correction, and infrastructure monitoring for space operations and research programs.',
+        metrics: ['Calibration support', 'Atm. path delay', 'Infrastructure monitoring'],
+        href: '/space',
+    },
+    {
+        id: 'FIN',
+        title: 'Finance',
+        desc: 'Independent verification of commodity yields for insurance underwriting, agricultural futures, and infrastructure asset valuation.',
+        metrics: ['Yield verification', 'Crop insurance data', 'Asset tracking'],
+        href: undefined,
     },
 ];
 
@@ -22,12 +43,11 @@ export default function Features() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-end mb-16">
                     <h2 className="heading-lg text-ink">
-                        One instrument.<br />One proven use case.
+                        One instrument.<br />Four problems.
                     </h2>
                     <p className="text-ink-soft text-base md:text-lg leading-relaxed max-w-[440px]">
-                        We built one physics engine that reads radar backscatter. Agriculture is where
-                        we&apos;ve run it end-to-end against real fields — that&apos;s where we&apos;re
-                        focused.
+                        We didn&apos;t build four products. We built one physics engine that reads radar
+                        backscatter, and pointed it at four places where that measurement happens to matter.
                     </p>
                 </div>
 

@@ -2,18 +2,23 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Radar, Atom, Satellite, ShieldCheck, type LucideIcon } from 'lucide-react';
+import { Radar, Atom, ScanEye, Satellite, ShieldCheck, type LucideIcon } from 'lucide-react';
 
 const FAQS: { q: string; a: string; icon: LucideIcon }[] = [
     {
         icon: Radar,
         q: 'How does PhasQ differ from NDVI optical imagery?',
-        a: 'NDVI is a lagging indicator — it only reveals stress after chlorophyll loss occurs visibly. PhasQ uses C-band SAR to measure dielectric constant changes in the surface soil layer, detecting water stress before any visual signals appear. The difference is prevention vs. reaction.',
+        a: 'NDVI is a lagging indicator — it only reveals stress after chlorophyll loss occurs visibly. PhasQ uses C-band SAR to measure dielectric constant changes in the surface soil layer, detecting water stress 14 days before any visual signals appear. The difference is prevention vs. reaction.',
     },
     {
         icon: Atom,
         q: 'What makes the physics-based approach unique?',
-        a: 'Competitors apply pattern-matching ML to optical images. We model backscatter physics (σ⁰) — separating surface roughness and vegetation scattering from the dielectric signal — and calibrate it against each field’s own radar history, instead of a fixed global constant.',
+        a: 'Competitors apply pattern-matching ML to optical images. We model backscatter physics (σ⁰) — separating surface roughness and vegetation scattering from the dielectric signal — to derive soil moisture and structural properties. It’s a physical inversion model, not a black-box correlation.',
+    },
+    {
+        icon: ScanEye,
+        q: 'Can radar detect assets under concealment?',
+        a: 'Yes. Metal surfaces have near-perfect radar reflectivity (corner reflection). Radar energy penetrates lightweight foliage, camouflage nets, and thin cover — returning a distinct double-bounce signature from hard surfaces that is difficult to mask.',
     },
     {
         icon: Satellite,
@@ -23,7 +28,7 @@ const FAQS: { q: string; a: string; icon: LucideIcon }[] = [
     {
         icon: ShieldCheck,
         q: 'How is data kept secure?',
-        a: 'Area-of-interest coordinates and analysis outputs are encrypted in transit and at rest. We do not share data with third parties or train external models on your inputs.',
+        a: 'Area-of-interest coordinates and analysis outputs are encrypted in transit and at rest. We do not share data with third parties or train external models on your inputs. Air-gapped, on-premise deployment for defense and government clients is on our roadmap, not available today — ask us directly about current security posture.',
     },
 ];
 
