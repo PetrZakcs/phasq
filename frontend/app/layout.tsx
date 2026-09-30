@@ -28,7 +28,7 @@ const plexMono = IBM_Plex_Mono({
 import type { Metadata } from "next";
 
 const TITLE = "PhasQ — Radar Intelligence Platform";
-const DESCRIPTION = "Physics-based Synthetic Aperture Radar analysis. All-weather satellite intelligence for agriculture, defense, and space.";
+const DESCRIPTION = "Radar-based soil moisture and drought analysis for agriculture. All-weather satellite intelligence, verified against the public Sentinel-1 archive.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://phasq.com"),

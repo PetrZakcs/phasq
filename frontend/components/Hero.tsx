@@ -92,15 +92,14 @@ export default function Hero() {
                         <span>Extreme</span>
                     </div>
 
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-6 pt-8 border-t border-line">
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-6 pt-8 border-t border-line">
                         {[
                             { value: 6, suffix: ' DAYS', label: 'Revisit cycle, Sentinel-1 pair' },
-                            { value: 14, prefix: '', suffix: '+ DAYS', label: 'Earlier than visible crop stress' },
                             { value: 100, suffix: '%', label: 'Cloud & night penetration' },
                         ].map((stat, i) => (
                             <div key={stat.label} className={i > 0 ? 'md:pl-6 md:border-l md:border-line' : ''}>
                                 <div className="stat-number">
-                                    <CountUp value={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
+                                    <CountUp value={stat.value} suffix={stat.suffix} />
                                 </div>
                                 <div className="text-ink-faint text-[13px] mt-1 max-w-[18ch]">{stat.label}</div>
                             </div>

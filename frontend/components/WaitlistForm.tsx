@@ -105,7 +105,6 @@ export default function WaitlistForm() {
                                         className="w-full bg-surface border border-line px-5 py-4 text-ink appearance-none focus:outline-none focus:border-accent transition-all cursor-pointer text-sm"
                                     >
                                         <option value="agriculture">Agriculture</option>
-                                        <option value="defense">Defense / gov</option>
                                         <option value="investor">Investor</option>
                                         <option value="other">Other</option>
                                     </select>

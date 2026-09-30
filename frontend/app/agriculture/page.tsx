@@ -13,7 +13,7 @@ const CALENDLY_URL = "https://calendly.com/petr-phasq/30min";
 
 export const metadata: Metadata = {
     title: "Agriculture",
-    description: "Surface soil moisture from Sentinel-1 radar backscatter — drought detection 14 days before it's visible, verified against a real, reproducible analysis run.",
+    description: "Surface soil moisture from Sentinel-1 radar backscatter — drought detection before it's visible, verified against a real, reproducible analysis run.",
 };
 
 export default function AgriculturePage() {
@@ -69,7 +69,7 @@ export default function AgriculturePage() {
                 items={[
                     { title: 'Surface moisture mapping', desc: 'Weekly dielectric-based soil moisture estimates per field, not a vegetation-color proxy.' },
                     { title: 'Harvest timing models', desc: 'Track drydown trends to time harvest windows against real soil conditions, not the calendar.' },
-                    { title: 'Yield loss prediction', desc: 'Flag developing drought stress two weeks before it shows up in scouting or optical NDVI.' },
+                    { title: 'Yield loss prediction', desc: 'Flag developing drought stress before it shows up in scouting or optical NDVI.' },
                     { title: 'Variable-rate maps (VRA)', desc: 'Export-ready moisture zones for variable-rate irrigation and input planning.' },
                 ]}
             />

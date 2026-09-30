@@ -4,7 +4,7 @@ import { CASES } from '@/lib/cases';
 const BASE_URL = 'https://phasq.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const staticRoutes = ['', '/agriculture', '/defense', '/space'].map((path) => ({
+    const staticRoutes = ['', '/agriculture'].map((path) => ({
         url: `${BASE_URL}${path}`,
         lastModified: new Date(),
         changeFrequency: 'weekly' as const,
